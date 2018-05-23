@@ -64,6 +64,10 @@ public class PlayerMovement : MonoBehaviour {
 
 				punch.SetActive (false);
 			}
+			if (Input.GetButtonUp ("Fire1")) 
+			{
+				hasSwing = false;
+			}
 			rb2d.velocity = Movement;
 		}
 		if (playerNo == "2") 
@@ -101,6 +105,12 @@ public class PlayerMovement : MonoBehaviour {
 
 				punch.SetActive (false);
 			}
+			if (Input.GetButtonUp ("Fire2")) 
+			{
+				hasSwing = false;
+			}
+
+
 			rb2d.velocity = Movement;
 		}
 		if (hp <= 0) 

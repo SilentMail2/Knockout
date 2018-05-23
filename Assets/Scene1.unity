@@ -264,7 +264,7 @@ Prefab:
     - target: {fileID: 114387607581815064, guid: 22f8271c80454a8408586800e3b49c7c,
         type: 2}
       propertyPath: hasSwing
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114387607581815064, guid: 22f8271c80454a8408586800e3b49c7c,
         type: 2}
@@ -276,6 +276,11 @@ Prefab:
       propertyPath: Weapon
       value: 
       objectReference: {fileID: 1665456904}
+    - target: {fileID: 61176231067301010, guid: 22f8271c80454a8408586800e3b49c7c,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22f8271c80454a8408586800e3b49c7c, type: 2}
   m_IsPrefabParent: 0
@@ -394,6 +399,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &972325793 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1032471960092112, guid: 22f8271c80454a8408586800e3b49c7c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1561412927}
 --- !u!1001 &1489025778
 Prefab:
   m_ObjectHideFlags: 0
@@ -487,12 +497,16 @@ Prefab:
         type: 2}
       propertyPath: swing
       value: 
-      objectReference: {fileID: 666435919}
+      objectReference: {fileID: 972325793}
     - target: {fileID: 114387607581815064, guid: 22f8271c80454a8408586800e3b49c7c,
         type: 2}
       propertyPath: Weapon
       value: 
       objectReference: {fileID: 1803785891}
+    - target: {fileID: 1032471960092112, guid: 22f8271c80454a8408586800e3b49c7c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22f8271c80454a8408586800e3b49c7c, type: 2}
   m_IsPrefabParent: 0
