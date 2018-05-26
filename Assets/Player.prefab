@@ -370,7 +370,13 @@ MonoBehaviour:
   punchDir: 0
   knockbackSpeed: 4000
   knockbackDir: 0
+  JumpSpeed: 0
   Weapon: {fileID: 0}
+  canjump: 0
+  jump: 0
+  jumpTime: 0
+  jumpTimer: 0
+  jumpCount: 0
 --- !u!212 &212111032478368274
 SpriteRenderer:
   m_ObjectHideFlags: 1
