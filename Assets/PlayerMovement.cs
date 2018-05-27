@@ -27,7 +27,10 @@ public class PlayerMovement : MonoBehaviour {
 	public float jump;
 	//scoresystem
 	public ScoreKeeper scoreSystem;
-
+	public GameObject BackShield;
+	public GameObject FrontShield;
+	public bool fShield;
+	public bool bShield;
 	//Controlls
 	public string jumpButton;
 	public string horizontalButton;
@@ -56,6 +59,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		return false;
 	}
+
 	// Use this for initialization
 	void Start () {
 		Time.timeScale = 0.8f;
@@ -64,12 +68,15 @@ public class PlayerMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (IsGrounded()) {
+			canjump = true;
+		}
 		if (hp > 0) {
 			Vector2 Movement = new Vector2 (Input.GetAxis (horizontalButton) * moveSpeed, JumpSpeed * jump - gravity);
-			if (Input.GetButtonDown (jumpButton) && IsGrounded ()) {
+			if (Input.GetButtonDown (jumpButton) && canjump) {
 				jump = 1;
 				gravity = 10;
-				
+				canjump = false;
 			}
 			if (/*jumpTimer > 0 &&*/ jump > 0) {
 				//jumpTimer = jumpTimer - jumpCount + Time.deltaTime;
@@ -132,11 +139,24 @@ public class PlayerMovement : MonoBehaviour {
 		}
 		if (hp <= 0) {
 			rb2d.AddForce (new Vector2 (knockbackDir * knockbackSpeed, 0));
+
+		}
+		if (bShield) {
+			BackShield.gameObject.SetActive (true);
+		}
+		if (!bShield) {
+			BackShield.gameObject.SetActive (false);
+		}
+		if (fShield) {
+			FrontShield.gameObject.SetActive (true);
+		}
+		if (!fShield) {
+			FrontShield.gameObject.SetActive (false);
 		}
 	}
-	public void Death ()
+	void Death ()
 	{
-		scoreSystem.dead++;
+		scoreSystem.dead += 1;
 		if (scoreSystem.dead == 1) {
 			scoreSystem.points [playerNo] += 5;
 		}
@@ -157,15 +177,41 @@ public class PlayerMovement : MonoBehaviour {
 			punchLocal = enemyPunch.transform.position.x;
 			punchDir = selfLocation - punchLocal;
 			if (punchDir < 0) {
-				knockbackDir = -1;
+				if (!fShield) {
+					knockbackDir = -1;
+					hp--;
+
+				}
+				if (fShield)
+				{
+					fShield = false;
+				}
 			}
 			if (punchDir > 0) {
-				knockbackDir = 1;
+				if (!bShield) {
+					knockbackDir = 1;
+					hp--;
+				}
+				if (bShield) {
+					bShield = false;
+				}
 			}
-			hp--;
+
+
 		}
 		if (other.gameObject.tag == "Melee") {
 			hasSwing = true;
+		}
+		if (other.gameObject.tag == "ShieldF") {
+			fShield= true;
+		}
+		if (other.gameObject.tag == "ShieldB") {
+			bShield = true;
+		}
+
+		if (hp <= 0) 
+		{
+			Death ();
 		}
 	}
 	

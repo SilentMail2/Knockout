@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61173112733106914}
   m_Layer: 10
   m_Name: BackShieldPickup (1)
-  m_TagString: ShieldB
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 61798807881584488}
   m_Layer: 10
   m_Name: FrontShieldPickup (1)
-  m_TagString: ShieldF
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -234,7 +234,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1902611072380470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.24, y: -5.2, z: 0}
+  m_LocalPosition: {x: -42.25, y: -5.2, z: -10.9}
   m_LocalScale: {x: 1, y: 2.1500003, z: 1}
   m_Children:
   - {fileID: 4675308723022324}
@@ -492,7 +492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 40
-  playerNo: 0
+  playerNo: 2
   rb2d: {fileID: 50006495048846494}
   obj: {fileID: 1902611072380470}
   punch: {fileID: 1982032401758554}
@@ -512,7 +512,12 @@ MonoBehaviour:
   Weapon: {fileID: 1845639186582518}
   canjump: 1
   jump: 0
-  scoreSystem: {fileID: 0}
+  scoreSystem: {fileID: 114526849829384508, guid: 26ea21b1870cbb54bbf282b57babe696,
+    type: 2}
+  BackShield: {fileID: 1435178669011852}
+  FrontShield: {fileID: 1822869200257842}
+  fShield: 0
+  bShield: 0
   jumpButton: Jump2
   horizontalButton: Horizontal2
   FireButton: Fire2
