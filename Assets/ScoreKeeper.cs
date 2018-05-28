@@ -4,17 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ScoreKeeper : MonoBehaviour {
 	public GameObject[] playerList;
-	public float[] points;
+	public int[] points;
 	public int dead;
+
+	public int pointsIncrement = 5;
+	public int firstDeathPoints = 5;
+	public int deathPoints;
+
 	// Use this for initialization
 	void Start () {
 		playerList = GameObject.FindGameObjectsWithTag ("Player");
 		//point list size = playerlistsize;
-		
+		deathPoints = firstDeathPoints;
+		dead = 0;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	public void LogDeath(int playerNum)
+	{
+		Debug.Log ("Scorekeeper acknowledges player " + playerNum + " has died.");
+		dead = dead + 1;
+		points [playerNum] = deathPoints;
+		deathPoints += pointsIncrement;
+		Debug.Log ("LogDeath Completed");
 	}
 }

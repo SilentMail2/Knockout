@@ -162,9 +162,26 @@ Prefab:
       propertyPath: punchTimer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114582134998740074, guid: 52bab0d7fa0cad940a241e8f97fc66e9,
+        type: 2}
+      propertyPath: ScreenExplosion
+      value: 
+      objectReference: {fileID: 1331381404426966, guid: 4f916f00dd152ba43b0583d8a61aaaca,
+        type: 2}
+    - target: {fileID: 114582134998740074, guid: 52bab0d7fa0cad940a241e8f97fc66e9,
+        type: 2}
+      propertyPath: scoreSystem
+      value: 
+      objectReference: {fileID: 358915359}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 52bab0d7fa0cad940a241e8f97fc66e9, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &358915359 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114526849829384508, guid: 26ea21b1870cbb54bbf282b57babe696,
+    type: 2}
+  m_PrefabInternal: {fileID: 794524400}
+  m_Script: {fileID: 11500000, guid: acf84299b224d5d468dd7493ab52d0c3, type: 3}
 --- !u!1 &526455204
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,6 +352,17 @@ Prefab:
       propertyPath: punchTimer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114644887459284110, guid: 14ab80b656de0ec4eb72c15d7a5340a5,
+        type: 2}
+      propertyPath: ScreenExplosion
+      value: 
+      objectReference: {fileID: 1331381404426966, guid: 4f916f00dd152ba43b0583d8a61aaaca,
+        type: 2}
+    - target: {fileID: 114644887459284110, guid: 14ab80b656de0ec4eb72c15d7a5340a5,
+        type: 2}
+      propertyPath: scoreSystem
+      value: 
+      objectReference: {fileID: 358915359}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 14ab80b656de0ec4eb72c15d7a5340a5, type: 2}
   m_IsPrefabParent: 0
@@ -367,18 +395,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0008249283, y: 0.67387295}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 19.2, y: 11.8}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 18.968275, y: 1.6942921}
   m_EdgeRadius: 0
 --- !u!212 &624179019
 SpriteRenderer:
@@ -414,7 +442,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6ade5836ab9e1a249b120185d3b499f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4aaa75013e97598498290f8e67c39c3b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -432,7 +460,7 @@ Transform:
   m_GameObject: {fileID: 624179017}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -26.510002, y: -3.9, z: -10.9}
-  m_LocalScale: {x: 18.077518, y: 1, z: 0.08295743}
+  m_LocalScale: {x: 1, y: 1, z: 0.08295743}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
@@ -584,6 +612,26 @@ Prefab:
         type: 2}
       propertyPath: points.Array.data[0]
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114526849829384508, guid: 26ea21b1870cbb54bbf282b57babe696,
+        type: 2}
+      propertyPath: points.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114526849829384508, guid: 26ea21b1870cbb54bbf282b57babe696,
+        type: 2}
+      propertyPath: points.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114526849829384508, guid: 26ea21b1870cbb54bbf282b57babe696,
+        type: 2}
+      propertyPath: points.Array.data[3]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114526849829384508, guid: 26ea21b1870cbb54bbf282b57babe696,
+        type: 2}
+      propertyPath: deathPoints
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26ea21b1870cbb54bbf282b57babe696, type: 2}
@@ -739,7 +787,7 @@ Camera:
   far clip plane: 1000
   field of view: 44.33453
   orthographic: 1
-  orthographic size: 16.597233
+  orthographic size: 29.450617
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -762,7 +810,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 924836538}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.27, y: 0, z: -20.9}
+  m_LocalPosition: {x: -21.27, y: 0, z: -81.51}
   m_LocalScale: {x: 0.78, y: 0.78, z: 0.78}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1116,7 +1164,7 @@ Prefab:
     - target: {fileID: 114905791427905610, guid: 0fde48bad65313f45bb8ae7ce77eb1a2,
         type: 2}
       propertyPath: fShield
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1585328061259498, guid: 0fde48bad65313f45bb8ae7ce77eb1a2, type: 2}
       propertyPath: m_IsActive
@@ -1136,6 +1184,17 @@ Prefab:
       propertyPath: punchTime
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114905791427905610, guid: 0fde48bad65313f45bb8ae7ce77eb1a2,
+        type: 2}
+      propertyPath: SelfDir
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114905791427905610, guid: 0fde48bad65313f45bb8ae7ce77eb1a2,
+        type: 2}
+      propertyPath: ScreenExplosion
+      value: 
+      objectReference: {fileID: 1331381404426966, guid: 4f916f00dd152ba43b0583d8a61aaaca,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0fde48bad65313f45bb8ae7ce77eb1a2, type: 2}
   m_IsPrefabParent: 0
@@ -1250,6 +1309,17 @@ Prefab:
       propertyPath: punchTimer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114355185755530174, guid: 274cb1cafea146a44a9b211dd58641de,
+        type: 2}
+      propertyPath: ScreenExplosion
+      value: 
+      objectReference: {fileID: 1331381404426966, guid: 4f916f00dd152ba43b0583d8a61aaaca,
+        type: 2}
+    - target: {fileID: 114355185755530174, guid: 274cb1cafea146a44a9b211dd58641de,
+        type: 2}
+      propertyPath: scoreSystem
+      value: 
+      objectReference: {fileID: 358915359}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 274cb1cafea146a44a9b211dd58641de, type: 2}
   m_IsPrefabParent: 0

@@ -44,11 +44,18 @@ public class PlayerMovement : MonoBehaviour {
 	public float jumpTimer;
 	public float jumpCount;
 
+	public float SelfDir;
+
 	public GameObject Trigger;
+	public GameObject ScreenExplosion;
+
+	public float CameraPointy;
+	public Vector3 CameraPoint;
 
 	public bool isPunching;
 	float lastPunchTime;
 	public float timeBetweenDamages = 0.2f;
+	bool alive = true;
 
 
 	public LayerMask groundLayer;
@@ -70,11 +77,20 @@ public class PlayerMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Time.timeScale = 0.8f;
+		//CameraDirectionX = 
 	}
 	
 
 	// Update is called once per frame
 	void Update () {
+		
+		CameraPoint = Camera.main.ScreenToWorldPoint (new Vector3 (Screen.width, CameraPointy, 0));
+		if (Input.GetAxis (horizontalButton) <0) {
+			SelfDir = 1;
+		}
+		if (Input.GetAxis (horizontalButton) > 0) {
+			SelfDir = -1;
+		}
 		if (IsGrounded()) {
 			canjump = true;
 		}
@@ -142,7 +158,7 @@ public class PlayerMovement : MonoBehaviour {
 			if (Input.GetButtonDown (DuckButton)) {
 				Trigger.SetActive (false);
 			}
-			if (Input.GetButton (DuckButton)) {
+			if (Input.GetButtonUp (DuckButton)) {
 				Trigger.SetActive (false);
 			}
 			rb2d.velocity = Movement;
@@ -159,7 +175,7 @@ public class PlayerMovement : MonoBehaviour {
 		}
 		if (hp <= 0) {
 			rb2d.AddForce (new Vector2 (knockbackDir * knockbackSpeed, 0));
-
+			rb2d.gravityScale = 0;
 		}
 		if (bShield) {
 			BackShield.gameObject.SetActive (true);
@@ -173,6 +189,7 @@ public class PlayerMovement : MonoBehaviour {
 		if (!fShield) {
 			FrontShield.gameObject.SetActive (false);
 		}
+		CameraPointy = this.gameObject.transform.position.y;
 	}
 
 	void EndPunch()
@@ -183,19 +200,25 @@ public class PlayerMovement : MonoBehaviour {
 
 	void Death ()
 	{
-		scoreSystem.dead += 1;
-		if (scoreSystem.dead == 1) {
-			scoreSystem.points [playerNo] += 5;
+		if (alive) {
+			Debug.Log ("Player " + playerNo + " has died.");
+			alive = false;
+			scoreSystem.LogDeath (playerNo);
+			/*scoreSystem.dead += 1;
+			if (scoreSystem.dead == 1) {
+				scoreSystem.points [playerNo] += 5;
+			}
+			if (scoreSystem.dead == 2) {
+				scoreSystem.points [playerNo] += 10;
+			}
+			if (scoreSystem.dead == 3) {
+				scoreSystem.points [playerNo] += 15;
+			}
+			if (scoreSystem.dead == 4) {
+				scoreSystem.points [playerNo] += 20;
+			}*/
 		}
-		if (scoreSystem.dead == 2) {
-			scoreSystem.points [playerNo] += 10;
-		}
-		if (scoreSystem.dead == 3) {
-			scoreSystem.points [playerNo] += 15;
-		}
-		if (scoreSystem.dead == 4) {
-			scoreSystem.points [playerNo] += 20;
-		}
+
 	}
 	void OnTriggerEnter2D (Collider2D other)
 	{
@@ -204,11 +227,12 @@ public class PlayerMovement : MonoBehaviour {
 			Debug.Log ("Gameobject " + gameObject + " has been punched by " + other.gameObject + " at time " + Time.deltaTime);
 			enemyPunch = other.gameObject;
 			punchLocal = enemyPunch.transform.position.x;
-			punchDir = selfLocation - punchLocal;
+			punchDir = (selfLocation - punchLocal)*SelfDir;
 			if (punchDir > 0) {
 				if (!fShield||bShield) {
 					knockbackDir = 1;
 					hp--;
+
 				}
 				if (fShield)
 				{
@@ -219,6 +243,7 @@ public class PlayerMovement : MonoBehaviour {
 				if (!bShield||fShield) {
 					knockbackDir = -1;
 					hp--;
+
 				}
 				if (bShield) {
 					bShield = false;
@@ -242,5 +267,9 @@ public class PlayerMovement : MonoBehaviour {
 			Death ();
 		}
 	}
-	
+	void OnBecameInvisible ()
+	{
+		//Instantiate (ScreenExplosion, CameraPoint, this.gameObject.transform.rotation);
+		//Debug.Log (ScreenExplosion + "has spawned");
+	}
 }
