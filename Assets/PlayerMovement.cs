@@ -46,6 +46,10 @@ public class PlayerMovement : MonoBehaviour {
 
 	public GameObject Trigger;
 
+	public bool isPunching;
+	float lastPunchTime;
+	public float timeBetweenDamages = 0.2f;
+
 
 	public LayerMask groundLayer;
 	public bool IsGrounded ()
@@ -102,6 +106,7 @@ public class PlayerMovement : MonoBehaviour {
 				newScale.x = 1;
 				obj.transform.localScale = newScale;
 			}
+			/*
 			if (Input.GetAxis (FireButton) > 0) {
 				if (!hasSwing) {
 					punch.SetActive (true);
@@ -124,6 +129,12 @@ public class PlayerMovement : MonoBehaviour {
 				swing.SetActive (false);
 
 				punch.SetActive (false);
+			}*/
+			if (Input.GetButtonDown(FireButton) && !isPunching){
+				//punch
+				punch.SetActive(true);
+				isPunching = true;
+				Invoke ("EndPunch", 0.5f);
 			}
 			if (Input.GetButtonUp (FireButton)) {
 				hasSwing = false;
@@ -131,7 +142,7 @@ public class PlayerMovement : MonoBehaviour {
 			if (Input.GetButtonDown (DuckButton)) {
 				Trigger.SetActive (false);
 			}
-			if (Input.GetButtonUp (DuckButton)) {
+			if (Input.GetButton (DuckButton)) {
 				Trigger.SetActive (false);
 			}
 			rb2d.velocity = Movement;
@@ -163,6 +174,13 @@ public class PlayerMovement : MonoBehaviour {
 			FrontShield.gameObject.SetActive (false);
 		}
 	}
+
+	void EndPunch()
+	{
+		punch.SetActive (false);
+		isPunching = false;
+	}
+
 	void Death ()
 	{
 		scoreSystem.dead += 1;
@@ -181,7 +199,9 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		if (other.gameObject.tag == "Damage") {
+		if (other.gameObject.tag == "Damage" && Time.time > (lastPunchTime + timeBetweenDamages)) {
+			lastPunchTime = Time.time;
+			Debug.Log ("Gameobject " + gameObject + " has been punched by " + other.gameObject + " at time " + Time.deltaTime);
 			enemyPunch = other.gameObject;
 			punchLocal = enemyPunch.transform.position.x;
 			punchDir = selfLocation - punchLocal;
