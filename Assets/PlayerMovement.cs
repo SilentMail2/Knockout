@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour {
 	public string jumpButton;
 	public string horizontalButton;
 	public string FireButton;
-
+	public string DuckButton;
 
 	public float gravity;
 	public float gravIncrease;
@@ -43,6 +43,9 @@ public class PlayerMovement : MonoBehaviour {
 	public float jumpTime;
 	public float jumpTimer;
 	public float jumpCount;
+
+	public GameObject Trigger;
+
 
 	public LayerMask groundLayer;
 	public bool IsGrounded ()
@@ -125,6 +128,12 @@ public class PlayerMovement : MonoBehaviour {
 			if (Input.GetButtonUp (FireButton)) {
 				hasSwing = false;
 			}
+			if (Input.GetButtonDown (DuckButton)) {
+				Trigger.SetActive (false);
+			}
+			if (Input.GetButtonUp (DuckButton)) {
+				Trigger.SetActive (false);
+			}
 			rb2d.velocity = Movement;
 
 
@@ -176,20 +185,19 @@ public class PlayerMovement : MonoBehaviour {
 			enemyPunch = other.gameObject;
 			punchLocal = enemyPunch.transform.position.x;
 			punchDir = selfLocation - punchLocal;
-			if (punchDir < 0) {
-				if (!fShield) {
-					knockbackDir = -1;
+			if (punchDir > 0) {
+				if (!fShield||bShield) {
+					knockbackDir = 1;
 					hp--;
-
 				}
 				if (fShield)
 				{
 					fShield = false;
 				}
 			}
-			if (punchDir > 0) {
-				if (!bShield) {
-					knockbackDir = 1;
+			if (punchDir < 0) {
+				if (!bShield||fShield) {
+					knockbackDir = -1;
 					hp--;
 				}
 				if (bShield) {

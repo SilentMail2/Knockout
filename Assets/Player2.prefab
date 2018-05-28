@@ -43,7 +43,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1226338754798422
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1254061556728194
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,9 +162,9 @@ Transform:
   - {fileID: 4671572764515134}
   - {fileID: 4691806420258410}
   - {fileID: 4707107778265194}
+  - {fileID: 4390167783980474}
   - {fileID: 4904496634569218}
   - {fileID: 4504968218977824}
-  - {fileID: 4390167783980474}
   - {fileID: 4496979308819446}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -176,11 +176,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1226338754798422}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.848, y: 0.08024443, z: 0}
-  m_LocalScale: {x: 0.225, y: 0.46511623, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4172672039140530}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4496979308819446
 Transform:
@@ -189,7 +189,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1118097048195512}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.45200014, y: 0.02, z: 0}
+  m_LocalPosition: {x: 0.554, y: 0.02, z: 0}
   m_LocalScale: {x: 0.731751, y: 0.8720925, z: 1}
   m_Children: []
   m_Father: {fileID: 4172672039140530}
@@ -202,11 +202,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1254061556728194}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6039996, y: 0.023255814, z: 0}
+  m_LocalPosition: {x: -0.554, y: 0.023255814, z: 0}
   m_LocalScale: {x: 0.7389776, y: 0.8720925, z: 1}
   m_Children: []
   m_Father: {fileID: 4172672039140530}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4671572764515134
 Transform:
@@ -258,7 +258,7 @@ Transform:
   m_LocalScale: {x: 0.25475973, y: 0.76966375, z: 1}
   m_Children: []
   m_Father: {fileID: 4172672039140530}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50868375508740416
 Rigidbody2D:
@@ -436,7 +436,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1944128652759796}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -497,14 +497,14 @@ MonoBehaviour:
   obj: {fileID: 1944128652759796}
   punch: {fileID: 1628803660424076}
   punchTime: 100
-  punchTimer: 100.01656
+  punchTimer: 100.01325
   punchCount: 10
   swing: {fileID: 1585328061259498}
   hasSwing: 0
   hp: 1
   punchLocal: 0
   enemyPunch: {fileID: 0}
-  selfLocation: 0
+  selfLocation: -13.893618
   punchDir: 0
   knockbackSpeed: 4000
   knockbackDir: 0
@@ -516,16 +516,18 @@ MonoBehaviour:
     type: 2}
   BackShield: {fileID: 1254061556728194}
   FrontShield: {fileID: 1118097048195512}
-  fShield: 0
+  fShield: 1
   bShield: 0
   jumpButton: Jump1
   horizontalButton: Horizontal
   FireButton: Fire1
+  DuckButton: Duck2
   gravity: 5
   gravIncrease: 0.08
   jumpTime: 10
-  jumpTimer: 10
+  jumpTimer: 10.013253
   jumpCount: 1
+  Trigger: {fileID: 1226338754798422}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256

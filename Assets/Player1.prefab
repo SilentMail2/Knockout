@@ -81,7 +81,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1583386513998948
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +202,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1617628107179482}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6039996, y: 0.023255814, z: 0}
+  m_LocalPosition: {x: -0.6039996, y: 0.023255814, z: 0}
   m_LocalScale: {x: 0.7389776, y: 0.8720925, z: 1}
   m_Children: []
   m_Father: {fileID: 4254953007330568}
@@ -215,8 +215,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1363095877743350}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.848, y: 0.080244, z: 0}
-  m_LocalScale: {x: 0.25475973, y: 0.76966375, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4254953007330568}
   m_RootOrder: 3
@@ -228,7 +228,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1828112574894208}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.45200014, y: 0.02, z: 0}
+  m_LocalPosition: {x: 0.4520001, y: 0.02, z: 0}
   m_LocalScale: {x: 0.731751, y: 0.8720925, z: 1}
   m_Children: []
   m_Father: {fileID: 4254953007330568}
@@ -386,7 +386,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1288753234489500}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -521,11 +521,13 @@ MonoBehaviour:
   jumpButton: Jump2
   horizontalButton: Horizontal2
   FireButton: Fire2
+  DuckButton: Duck
   gravity: 5
   gravIncrease: 0.08
   jumpTime: 10
   jumpTimer: 10
   jumpCount: 1
+  Trigger: {fileID: 1363095877743350}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
