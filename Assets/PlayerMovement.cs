@@ -77,13 +77,16 @@ public class PlayerMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Time.timeScale = 0.8f;
+
 		//CameraDirectionX = 
 	}
 	
 
 	// Update is called once per frame
 	void Update () {
-		
+		if ((scoreSystem.playerMode-1) < playerNo) {
+			this.gameObject.SetActive (false);
+		}
 		CameraPoint = Camera.main.ScreenToWorldPoint (new Vector3 (Screen.width, CameraPointy, 0));
 		if (Input.GetAxis (horizontalButton) <0) {
 			SelfDir = 1;
@@ -190,7 +193,7 @@ public class PlayerMovement : MonoBehaviour {
 			FrontShield.gameObject.SetActive (false);
 		}
 		CameraPointy = this.gameObject.transform.position.y;
-		if (scoreSystem.dead <= scoreSystem.playerMode - 1 && alive) {
+		if (scoreSystem.dead == scoreSystem.playerMode - 1 && alive) {
 			scoreSystem.LogDeath (playerNo);
 		}
 	}

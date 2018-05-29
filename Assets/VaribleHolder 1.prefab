@@ -9,56 +9,52 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1419750584930702}
+  m_RootGameObject: {fileID: 1406594128926638}
   m_IsPrefabParent: 1
---- !u!1 &1419750584930702
+--- !u!1 &1406594128926638
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4243737209935662}
-  - component: {fileID: 114526849829384508}
+  - component: {fileID: 4408070941498716}
+  - component: {fileID: 114520517624498154}
   m_Layer: 0
-  m_Name: RoundObject
-  m_TagString: Untagged
+  m_Name: VaribleHolder 1
+  m_TagString: VariableHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4243737209935662
+--- !u!4 &4408070941498716
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1419750584930702}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.7894595, y: 3.3664465, z: 1.290916}
+  m_GameObject: {fileID: 1406594128926638}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 960, y: 530.00006, z: 204}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114526849829384508
+--- !u!114 &114520517624498154
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1419750584930702}
+  m_GameObject: {fileID: 1406594128926638}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acf84299b224d5d468dd7493ab52d0c3, type: 3}
+  m_Script: {fileID: 11500000, guid: 0823596942dfcf2418df38927b1febac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerList: []
-  VariableHolder: {fileID: 1406594128926638, guid: 18dda619fb4152b48a0308f99f06600f,
-    type: 2}
-  Variables: {fileID: 114520517624498154, guid: 18dda619fb4152b48a0308f99f06600f,
-    type: 2}
-  points: 00000000000000000000000000000000
-  dead: 0
-  playerMode: 0
-  pointsIncrement: 5
-  firstDeathPoints: 5
-  deathPoints: 0
+  PlayerNos: 0
+  noPlayer: 0
+  matchtypes: 0000
+  Playerno: {fileID: 0}
+  PlayerSkins: {fileID: 0}
+  StartMenu: {fileID: 0}
+  Scene: Scene1

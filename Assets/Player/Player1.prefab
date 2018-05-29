@@ -531,7 +531,8 @@ MonoBehaviour:
   Trigger: {fileID: 1363095877743350}
   ScreenExplosion: {fileID: 1894493013441880, guid: 0ff59f4351804504ead43ce8af828dd5,
     type: 2}
-  CameraPoint: {x: 0, y: 0}
+  CameraPointy: 0
+  CameraPoint: {x: 0, y: 0, z: 0}
   isPunching: 0
   timeBetweenDamages: 0.2
   groundLayer:
