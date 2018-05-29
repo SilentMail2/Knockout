@@ -6,7 +6,7 @@ public class ScoreKeeper : MonoBehaviour {
 	public GameObject[] playerList;
 	public int[] points;
 	public int dead;
-
+	public int playerMode;
 	public int pointsIncrement = 5;
 	public int firstDeathPoints = 5;
 	public int deathPoints;
@@ -16,7 +16,7 @@ public class ScoreKeeper : MonoBehaviour {
 		playerList = GameObject.FindGameObjectsWithTag ("Player");
 		//point list size = playerlistsize;
 		deathPoints = firstDeathPoints;
-		dead = 0;
+		//dead = 0;
 	}
 
 	public void LogDeath(int playerNum)

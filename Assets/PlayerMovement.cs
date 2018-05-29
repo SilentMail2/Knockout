@@ -190,6 +190,9 @@ public class PlayerMovement : MonoBehaviour {
 			FrontShield.gameObject.SetActive (false);
 		}
 		CameraPointy = this.gameObject.transform.position.y;
+		if (scoreSystem.dead <= scoreSystem.playerMode - 1 && alive) {
+			scoreSystem.LogDeath (playerNo);
+		}
 	}
 
 	void EndPunch()
@@ -204,6 +207,7 @@ public class PlayerMovement : MonoBehaviour {
 			Debug.Log ("Player " + playerNo + " has died.");
 			alive = false;
 			scoreSystem.LogDeath (playerNo);
+
 			/*scoreSystem.dead += 1;
 			if (scoreSystem.dead == 1) {
 				scoreSystem.points [playerNo] += 5;
