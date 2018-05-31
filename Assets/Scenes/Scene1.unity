@@ -300,45 +300,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114582134998740074, guid: 52bab0d7fa0cad940a241e8f97fc66e9,
         type: 2}
-      propertyPath: punchTime
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114582134998740074, guid: 52bab0d7fa0cad940a241e8f97fc66e9,
-        type: 2}
-      propertyPath: punchTimer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114582134998740074, guid: 52bab0d7fa0cad940a241e8f97fc66e9,
-        type: 2}
-      propertyPath: ScreenExplosion
-      value: 
-      objectReference: {fileID: 1331381404426966, guid: 4f916f00dd152ba43b0583d8a61aaaca,
-        type: 2}
-    - target: {fileID: 114582134998740074, guid: 52bab0d7fa0cad940a241e8f97fc66e9,
-        type: 2}
       propertyPath: scoreSystem
       value: 
       objectReference: {fileID: 624179021}
-    - target: {fileID: 114582134998740074, guid: 52bab0d7fa0cad940a241e8f97fc66e9,
-        type: 2}
-      propertyPath: SelfDir
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 61986643593015324, guid: 52bab0d7fa0cad940a241e8f97fc66e9,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 61688282511492356, guid: 52bab0d7fa0cad940a241e8f97fc66e9,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114582134998740074, guid: 52bab0d7fa0cad940a241e8f97fc66e9,
-        type: 2}
-      propertyPath: DuckButton
-      value: Duck2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 52bab0d7fa0cad940a241e8f97fc66e9, type: 2}
   m_IsPrefabParent: 0
@@ -801,55 +765,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114644887459284110, guid: 14ab80b656de0ec4eb72c15d7a5340a5,
         type: 2}
-      propertyPath: punchTime
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114644887459284110, guid: 14ab80b656de0ec4eb72c15d7a5340a5,
-        type: 2}
-      propertyPath: punchTimer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114644887459284110, guid: 14ab80b656de0ec4eb72c15d7a5340a5,
-        type: 2}
-      propertyPath: ScreenExplosion
-      value: 
-      objectReference: {fileID: 1331381404426966, guid: 4f916f00dd152ba43b0583d8a61aaaca,
-        type: 2}
-    - target: {fileID: 114644887459284110, guid: 14ab80b656de0ec4eb72c15d7a5340a5,
-        type: 2}
       propertyPath: scoreSystem
       value: 
       objectReference: {fileID: 624179021}
-    - target: {fileID: 114644887459284110, guid: 14ab80b656de0ec4eb72c15d7a5340a5,
-        type: 2}
-      propertyPath: SelfDir
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114644887459284110, guid: 14ab80b656de0ec4eb72c15d7a5340a5,
-        type: 2}
-      propertyPath: horizontalButton
-      value: Horizontal4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114644887459284110, guid: 14ab80b656de0ec4eb72c15d7a5340a5,
-        type: 2}
-      propertyPath: jumpButton
-      value: Jump4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114644887459284110, guid: 14ab80b656de0ec4eb72c15d7a5340a5,
-        type: 2}
-      propertyPath: FireButton
-      value: Fire4
-      objectReference: {fileID: 0}
-    - target: {fileID: 61723035370184834, guid: 14ab80b656de0ec4eb72c15d7a5340a5,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114644887459284110, guid: 14ab80b656de0ec4eb72c15d7a5340a5,
-        type: 2}
-      propertyPath: DuckButton
-      value: Duck4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 14ab80b656de0ec4eb72c15d7a5340a5, type: 2}
   m_IsPrefabParent: 0
@@ -1448,73 +1366,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1944128652759796, guid: 0fde48bad65313f45bb8ae7ce77eb1a2, type: 2}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 61409780743763832, guid: 0fde48bad65313f45bb8ae7ce77eb1a2,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114905791427905610, guid: 0fde48bad65313f45bb8ae7ce77eb1a2,
-        type: 2}
-      propertyPath: fShield
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1585328061259498, guid: 0fde48bad65313f45bb8ae7ce77eb1a2, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1628803660424076, guid: 0fde48bad65313f45bb8ae7ce77eb1a2, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114905791427905610, guid: 0fde48bad65313f45bb8ae7ce77eb1a2,
-        type: 2}
-      propertyPath: punchTimer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114905791427905610, guid: 0fde48bad65313f45bb8ae7ce77eb1a2,
-        type: 2}
-      propertyPath: punchTime
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114905791427905610, guid: 0fde48bad65313f45bb8ae7ce77eb1a2,
-        type: 2}
-      propertyPath: SelfDir
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114905791427905610, guid: 0fde48bad65313f45bb8ae7ce77eb1a2,
-        type: 2}
-      propertyPath: ScreenExplosion
-      value: 
-      objectReference: {fileID: 1331381404426966, guid: 4f916f00dd152ba43b0583d8a61aaaca,
-        type: 2}
     - target: {fileID: 114905791427905610, guid: 0fde48bad65313f45bb8ae7ce77eb1a2,
         type: 2}
       propertyPath: scoreSystem
       value: 
       objectReference: {fileID: 624179021}
-    - target: {fileID: 114905791427905610, guid: 0fde48bad65313f45bb8ae7ce77eb1a2,
-        type: 2}
-      propertyPath: horizontalButton
-      value: Horizontal1
-      objectReference: {fileID: 0}
-    - target: {fileID: 61409780743763832, guid: 0fde48bad65313f45bb8ae7ce77eb1a2,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 61751914611597292, guid: 0fde48bad65313f45bb8ae7ce77eb1a2,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114905791427905610, guid: 0fde48bad65313f45bb8ae7ce77eb1a2,
-        type: 2}
-      propertyPath: DuckButton
-      value: Duck1
+    - target: {fileID: 1944128652759796, guid: 0fde48bad65313f45bb8ae7ce77eb1a2, type: 2}
+      propertyPath: m_Name
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0fde48bad65313f45bb8ae7ce77eb1a2, type: 2}
@@ -1622,55 +1481,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114355185755530174, guid: 274cb1cafea146a44a9b211dd58641de,
         type: 2}
-      propertyPath: punchTime
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114355185755530174, guid: 274cb1cafea146a44a9b211dd58641de,
-        type: 2}
-      propertyPath: punchTimer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114355185755530174, guid: 274cb1cafea146a44a9b211dd58641de,
-        type: 2}
-      propertyPath: ScreenExplosion
-      value: 
-      objectReference: {fileID: 1331381404426966, guid: 4f916f00dd152ba43b0583d8a61aaaca,
-        type: 2}
-    - target: {fileID: 114355185755530174, guid: 274cb1cafea146a44a9b211dd58641de,
-        type: 2}
       propertyPath: scoreSystem
       value: 
       objectReference: {fileID: 624179021}
-    - target: {fileID: 114355185755530174, guid: 274cb1cafea146a44a9b211dd58641de,
-        type: 2}
-      propertyPath: SelfDir
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114355185755530174, guid: 274cb1cafea146a44a9b211dd58641de,
-        type: 2}
-      propertyPath: horizontalButton
-      value: Horizontal3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114355185755530174, guid: 274cb1cafea146a44a9b211dd58641de,
-        type: 2}
-      propertyPath: jumpButton
-      value: Jump3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114355185755530174, guid: 274cb1cafea146a44a9b211dd58641de,
-        type: 2}
-      propertyPath: FireButton
-      value: Fire3
-      objectReference: {fileID: 0}
-    - target: {fileID: 61850911560838858, guid: 274cb1cafea146a44a9b211dd58641de,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114355185755530174, guid: 274cb1cafea146a44a9b211dd58641de,
-        type: 2}
-      propertyPath: DuckButton
-      value: Duck3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 274cb1cafea146a44a9b211dd58641de, type: 2}
   m_IsPrefabParent: 0

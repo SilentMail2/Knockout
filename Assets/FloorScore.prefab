@@ -79,9 +79,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerList: []
+  VariableHolder: {fileID: 0}
+  Variables: {fileID: 0}
   points: 00000000000000000000000000000000
   dead: 0
-  playerMode: 0
+  playerMode: 4
   pointsIncrement: 5
   firstDeathPoints: 5
   deathPoints: 0

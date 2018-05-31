@@ -234,7 +234,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1902611072380470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -42.25, y: -5.2, z: -10.9}
+  m_LocalPosition: {x: -30.05, y: -1.23, z: -10.9}
   m_LocalScale: {x: 1, y: 2.1500003, z: 1}
   m_Children:
   - {fileID: 4675308723022324}
@@ -414,7 +414,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -496,8 +496,8 @@ MonoBehaviour:
   rb2d: {fileID: 50006495048846494}
   obj: {fileID: 1902611072380470}
   punch: {fileID: 1982032401758554}
-  punchTime: 100
-  punchTimer: 100.01656
+  punchTime: 10
+  punchTimer: 10
   punchCount: 10
   swing: {fileID: 1931922457195468}
   hasSwing: 0
@@ -512,29 +512,29 @@ MonoBehaviour:
   Weapon: {fileID: 1845639186582518}
   canjump: 1
   jump: 0
-  scoreSystem: {fileID: 114526849829384508, guid: 26ea21b1870cbb54bbf282b57babe696,
-    type: 2}
+  scoreSystem: {fileID: 0}
   BackShield: {fileID: 1435178669011852}
   FrontShield: {fileID: 1822869200257842}
   fShield: 0
   bShield: 0
-  jumpButton: Jump2
-  horizontalButton: Horizontal2
-  FireButton: Fire2
-  DuckButton: Duck
+  jumpButton: Jump4
+  horizontalButton: Horizontal4
+  FireButton: Fire4
+  DuckButton: Duck4
   gravity: 5
   gravIncrease: 0.08
   jumpTime: 10
   jumpTimer: 10
   jumpCount: 1
-  SelfDir: 0
+  SelfDir: 1
   Trigger: {fileID: 1991191995477088}
-  ScreenExplosion: {fileID: 1894493013441880, guid: 0ff59f4351804504ead43ce8af828dd5,
+  ScreenExplosion: {fileID: 1331381404426966, guid: 4f916f00dd152ba43b0583d8a61aaaca,
     type: 2}
   CameraPointy: 0
   CameraPoint: {x: 0, y: 0, z: 0}
   isPunching: 0
   timeBetweenDamages: 0.2
+  isDucking: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
