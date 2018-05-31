@@ -57,4 +57,10 @@ MonoBehaviour:
   Playerno: {fileID: 0}
   PlayerSkins: {fileID: 0}
   StartMenu: {fileID: 0}
+  PauseMenu: {fileID: 0}
+  EveryMenu: {fileID: 0}
+  InGame: 0
+  paused: 0
   Scene: Scene1
+  startMenu: MainMenu
+  pauseGame: Cancel

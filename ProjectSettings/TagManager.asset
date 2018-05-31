@@ -9,6 +9,7 @@ TagManager:
   - ShieldF
   - ShieldB
   - VariableHolder
+  - Wall
   layers:
   - Default
   - TransparentFX

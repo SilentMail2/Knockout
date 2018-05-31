@@ -57,6 +57,7 @@ public class PlayerMovement : MonoBehaviour {
 	public float timeBetweenDamages = 0.2f;
 	bool alive = true;
 
+	public bool isDucking;
 
 	public LayerMask groundLayer;
 	public bool IsGrounded ()
@@ -159,10 +160,10 @@ public class PlayerMovement : MonoBehaviour {
 				hasSwing = false;
 			}
 			if (Input.GetButtonDown (DuckButton)) {
-				Trigger.SetActive (false);
+				isDucking = true;
 			}
 			if (Input.GetButtonUp (DuckButton)) {
-				Trigger.SetActive (false);
+				isDucking = false;
 			}
 			rb2d.velocity = Movement;
 
@@ -195,6 +196,7 @@ public class PlayerMovement : MonoBehaviour {
 		CameraPointy = this.gameObject.transform.position.y;
 		if (scoreSystem.dead == scoreSystem.playerMode - 1 && alive) {
 			scoreSystem.LogDeath (playerNo);
+			//scoreSystem.points.
 		}
 	}
 
@@ -229,13 +231,13 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		if (other.gameObject.tag == "Damage" && Time.time > (lastPunchTime + timeBetweenDamages)) {
+		if (other.gameObject.tag == "Damage" && Time.time > (lastPunchTime + timeBetweenDamages) || other.gameObject.tag == "Wall") {
 			lastPunchTime = Time.time;
 			Debug.Log ("Gameobject " + gameObject + " has been punched by " + other.gameObject + " at time " + Time.deltaTime);
 			enemyPunch = other.gameObject;
 			punchLocal = enemyPunch.transform.position.x;
 			punchDir = (selfLocation - punchLocal)*SelfDir;
-			if (punchDir > 0) {
+			if (punchDir > 0 && !isDucking) {
 				if (!fShield||bShield) {
 					knockbackDir = 1;
 					hp--;
@@ -246,7 +248,7 @@ public class PlayerMovement : MonoBehaviour {
 					fShield = false;
 				}
 			}
-			if (punchDir < 0) {
+			if (punchDir < 0 && !isDucking) {
 				if (!bShield||fShield) {
 					knockbackDir = -1;
 					hp--;
@@ -268,6 +270,10 @@ public class PlayerMovement : MonoBehaviour {
 		if (other.gameObject.tag == "ShieldB") {
 			bShield = true;
 		}
+		/*if (other.gameObject.tag == "Wall") {
+			Death ();
+		}*/
+			
 
 		if (hp <= 0) 
 		{
