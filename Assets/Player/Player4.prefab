@@ -512,6 +512,8 @@ MonoBehaviour:
   Weapon: {fileID: 1845639186582518}
   canjump: 1
   jump: 0
+  flipX: 0
+  mySpriteRenderer: {fileID: 212870364607306990}
   scoreSystem: {fileID: 0}
   BackShield: {fileID: 1435178669011852}
   FrontShield: {fileID: 1822869200257842}

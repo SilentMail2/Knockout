@@ -25,6 +25,11 @@ public class PlayerMovement : MonoBehaviour {
 	public GameObject Weapon;
 	public bool canjump;
 	public float jump;
+
+	//animation
+	public bool flipX;
+	public SpriteRenderer mySpriteRenderer;
+	
 	//scoresystem
 	public ScoreKeeper scoreSystem;
 	public GameObject BackShield;
@@ -46,7 +51,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	public float SelfDir;
 
-	public GameObject Trigger;
+	//public GameObject Trigger;
 	public GameObject ScreenExplosion;
 
 	public float CameraPointy;
@@ -116,15 +121,34 @@ public class PlayerMovement : MonoBehaviour {
 			if (jump == 0) {
 				jumpTimer = jumpTime + Time.deltaTime;
 			}
+
+			if (flipX) {
+				mySpriteRenderer.flipX = true;
+				punch.transform.position = new Vector3 (this.transform.position.x-0.42f, this.transform.position.y+0.47f, this.transform.position.z);
+				swing.transform.position = new Vector3 (this.transform.position.x - 0.95f, this.transform.position.y + 0.47f, this.transform.position.z);
+				this.gameObject.GetComponent<BoxCollider2D> ().offset = new Vector2 (1.37f, 0);
+			} else if (!flipX){
+				mySpriteRenderer.flipX = false;
+				punch.transform.position = new Vector3 (this.transform.position.x + 0.42f, this.transform.position.y+0.47f, this.transform.position.z);
+				swing.transform.position = new Vector3 (this.transform.position.x + 0.95f, this.transform.position.y + 0.47f, this.transform.position.z);
+				this.gameObject.GetComponent<BoxCollider2D> ().offset = new Vector2 (-1.37f, 0);
+			}
+
 			if (Input.GetAxis (horizontalButton) < 0) {
-				Vector3 newScale = obj.transform.localScale;
+				flipX = true;
+				/*Vector3 newScale = obj.transform.localScale;
 				newScale.x = -1;
-				obj.transform.localScale = newScale;
+				newScale.y = 1;
+				newScale.z = 1;
+				obj.transform.localScale = obj.transform.localScale.x*newScale;*/
 			}
 			if (Input.GetAxis (horizontalButton) > 0) {
-				Vector3 newScale = obj.transform.localScale;
-				newScale.x = 1;
-				obj.transform.localScale = newScale;
+				flipX = false;
+				/*Vector3 newScale = obj.transform.localScale;
+				newScale.x = -1;
+				newScale.y = 1;
+				newScale.z = 1;
+				obj.transform.localScale = new Vector3 (obj.transform.localScale.x*newScale.x, obj.transform.localScale.y, obj.transform.localScale.z);*/
 			}
 			/*
 			if (Input.GetAxis (FireButton) > 0) {
