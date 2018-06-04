@@ -236,7 +236,7 @@ public class PlayerMovement : MonoBehaviour {
 			Debug.Log ("Player " + playerNo + " has died.");
 			alive = false;
 			scoreSystem.LogDeath (playerNo);
-
+			this.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
 			/*scoreSystem.dead += 1;
 			if (scoreSystem.dead == 1) {
 				scoreSystem.points [playerNo] += 5;

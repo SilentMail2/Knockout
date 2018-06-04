@@ -13,14 +13,18 @@ public class MatchVariables : MonoBehaviour {
 	public GameObject StartMenu;
 	public GameObject PauseMenu;
 	public GameObject EveryMenu;
+	public GameObject WinnerMenu;
 	public bool InGame = false;
 	public bool paused = false;
 	public string Scene;
 	public string startMenu;
 	public string pauseGame;
+	public bool winnerMenu = false;
+	public Scene currentScene;
 	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad (this.gameObject);
+		currentScene = SceneManager.GetActiveScene();
 		if (FindObjectsOfType (GetType ()).Length > 1) {
 			Destroy (gameObject);
 		}
@@ -39,10 +43,17 @@ public class MatchVariables : MonoBehaviour {
 				UnPauseGame ();
 			}
 		}
+		if (winnerMenu) {
+			WinnerMenu.SetActive (true);
+		}
+		if (!winnerMenu) {
+			WinnerMenu.SetActive (false);
+		}
 	}
 	public void QuickPlay ()
 	{
 		matchtypes [0] = true;
+		matchtypes [1] = false;
 		StartMenu.SetActive (false);
 		Playerno.SetActive (true);
 	}
@@ -50,6 +61,7 @@ public class MatchVariables : MonoBehaviour {
 	{
 		StartMenu.SetActive (false);
 		matchtypes [1] = true;
+		matchtypes [0] = false;
 		Playerno.SetActive (true);
 	}
 	public void TwoPlayer ()
@@ -97,17 +109,30 @@ public class MatchVariables : MonoBehaviour {
 	public void MainMenu ()
 	{
 		
-			SceneManager.LoadScene (startMenu);
-			EveryMenu.SetActive (true);
-			InGame = false;
-			PauseMenu.SetActive (false);
+		SceneManager.LoadScene (startMenu);
+		EveryMenu.SetActive (true);
+		InGame = false;
+		PauseMenu.SetActive (false);
 		StartMenu.SetActive (true);
-			Time.timeScale = 1;
+		WinnerMenu.SetActive (false);
+		Time.timeScale = 1;
 
 	}
 	public void ExitApp ()
 	{
 		Application.Quit();
+	}
+	public void Rematch()
+	{
+		WinnerMenu.SetActive (false);
+		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
+		winnerMenu = false;
+
+	}
+	public void Winner()
+	{
+		winnerMenu = true;
+		WinnerMenu.SetActive (true);
 	}
 
 

@@ -24,9 +24,14 @@ public class ScoreKeeper : MonoBehaviour {
 		deathPoints = firstDeathPoints;
 		//dead = 0;
 		playerMode = Variables.PlayerNos;
-		
-	}
 
+	}
+	void Update ()
+	{
+		if (dead >= playerMode) {
+			Variables.Winner ();
+		}
+	}
 	public void LogDeath(int playerNum)
 	{
 		Debug.Log ("Scorekeeper acknowledges player " + playerNum + " has died.");

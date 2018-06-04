@@ -59,6 +59,7 @@ MonoBehaviour:
   StartMenu: {fileID: 0}
   PauseMenu: {fileID: 0}
   EveryMenu: {fileID: 0}
+  WinnerMenu: {fileID: 0}
   InGame: 0
   paused: 0
   Scene: Scene1
