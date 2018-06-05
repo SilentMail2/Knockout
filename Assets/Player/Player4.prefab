@@ -525,6 +525,7 @@ MonoBehaviour:
   FrontShield: {fileID: 1822869200257842}
   fShield: 0
   bShield: 0
+  Score: {fileID: 114498255981534284, guid: 9fcba018b2a3b7c429b74006fa28ccc0, type: 2}
   jumpButton: Jump4
   horizontalButton: Horizontal4
   FireButton: Fire4

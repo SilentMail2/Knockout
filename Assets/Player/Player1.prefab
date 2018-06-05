@@ -393,7 +393,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1288753234489500}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -543,6 +543,7 @@ MonoBehaviour:
   FrontShield: {fileID: 1828112574894208}
   fShield: 0
   bShield: 0
+  Score: {fileID: 114856370488867264, guid: 9fcba018b2a3b7c429b74006fa28ccc0, type: 2}
   jumpButton: Jump2
   horizontalButton: Horizontal2
   FireButton: Fire2

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeactivationOnLoad : MonoBehaviour {
+public class ScoreBoard : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//this.gameObject.SetActive (false);
+		
 	}
 	
 	// Update is called once per frame

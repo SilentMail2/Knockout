@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour {
 	public GameObject FrontShield;
 	public bool fShield;
 	public bool bShield;
+	public Text Score;
 	//Controlls
 	public string jumpButton;
 	public string horizontalButton;
@@ -90,6 +91,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		Score.text = (scoreSystem.points [playerNo].ToString());
 		if ((scoreSystem.playerMode-1) < playerNo) {
 			this.gameObject.SetActive (false);
 		}

@@ -21,6 +21,23 @@ public class MatchVariables : MonoBehaviour {
 	public string pauseGame;
 	public bool winnerMenu = false;
 	public Scene currentScene;
+	public int MaxRound;
+	public int Round;
+	public GameObject RoundMenu;
+
+	public int Player1Score;
+	public int Player2Score;
+	public int Player3Score;
+	public int Player4Score;
+
+	public Text Player1ScTx;
+	public Text Player2ScTx;
+	public Text Player3ScTx;
+	public Text Player4ScTx;
+
+	public Text WinnerText;
+
+	
 	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad (this.gameObject);
@@ -49,6 +66,10 @@ public class MatchVariables : MonoBehaviour {
 		if (!winnerMenu) {
 			WinnerMenu.SetActive (false);
 		}
+		Player1ScTx.text = Player1Score.ToString();
+		Player2ScTx.text = Player2Score.ToString();
+		Player3ScTx.text = Player3Score.ToString();
+		Player4ScTx.text = Player4Score.ToString();
 	}
 	public void QuickPlay ()
 	{
@@ -56,6 +77,7 @@ public class MatchVariables : MonoBehaviour {
 		matchtypes [1] = false;
 		StartMenu.SetActive (false);
 		Playerno.SetActive (true);
+		MaxRound = 0;
 	}
 	public void Tournament()
 	{
@@ -63,6 +85,7 @@ public class MatchVariables : MonoBehaviour {
 		matchtypes [1] = true;
 		matchtypes [0] = false;
 		Playerno.SetActive (true);
+		MaxRound = 3;
 	}
 	public void TwoPlayer ()
 	{
@@ -102,20 +125,28 @@ public class MatchVariables : MonoBehaviour {
 	public void UnPauseGame ()
 	{
 		
-			PauseMenu.SetActive (false);
-			Time.timeScale = 1;
+		PauseMenu.SetActive (false);
+		Time.timeScale = 1;
 		
 	}
 	public void MainMenu ()
 	{
-		
-		SceneManager.LoadScene (startMenu);
+		RoundMenu.SetActive (false);
+
 		EveryMenu.SetActive (true);
 		InGame = false;
 		PauseMenu.SetActive (false);
 		StartMenu.SetActive (true);
 		WinnerMenu.SetActive (false);
+		winnerMenu = false;
+		if (!winnerMenu) {
+			SceneManager.LoadScene (startMenu);
+		}
 		Time.timeScale = 1;
+		Player1Score = 0;
+		Player2Score = 0;
+		Player3Score = 0;
+		Player4Score = 0;
 
 	}
 	public void ExitApp ()
@@ -124,16 +155,47 @@ public class MatchVariables : MonoBehaviour {
 	}
 	public void Rematch()
 	{
+		
 		WinnerMenu.SetActive (false);
-		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
+		RoundMenu.SetActive (false);
 		winnerMenu = false;
-
+		if (!winnerMenu) {
+			SceneManager.LoadScene (SceneManager.GetActiveScene().name);
+		}
+		if (MaxRound == Round) {
+			Player1Score = 0;
+			Player2Score = 0;
+			Player3Score = 0;
+			Player4Score = 0;
+		}
+		Time.timeScale = 1;
 	}
 	public void Winner()
 	{
+		if (Player1Score > Player2Score && Player1Score > Player3Score && Player1Score > Player4Score) {
+			WinnerText.text = "Player 1 Wins!";
+		}
+		if (Player2Score > Player1Score && Player2Score > Player3Score && Player2Score > Player4Score) {
+			WinnerText.text = "Player 2 Wins!";
+		}
+		if (Player3Score > Player2Score && Player3Score > Player1Score && Player3Score > Player4Score) {
+			WinnerText.text = "Player 3 Wins!";
+		}
+		if (Player4Score > Player2Score && Player4Score > Player3Score && Player4Score>Player1Score) {
+			WinnerText.text = "Player 4 Wins!";
+		}
 		winnerMenu = true;
 		WinnerMenu.SetActive (true);
+		Time.timeScale = 0;
+
+
 	}
+	public void EndRound()
+	{
+		RoundMenu.SetActive (true);
+		Time.timeScale = 0;
+	}
+	
 
 
 }
