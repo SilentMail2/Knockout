@@ -614,6 +614,7 @@ GameObject:
   - component: {fileID: 526455207}
   - component: {fileID: 526455206}
   - component: {fileID: 526455205}
+  - component: {fileID: 526455209}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -696,6 +697,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!95 &526455209
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 526455204}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f16f14eb412d6814ea141c58ba2dcc9c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &542505897
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,16 +895,6 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1585328061259498, guid: 0fde48bad65313f45bb8ae7ce77eb1a2, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114905791427905610, guid: 0fde48bad65313f45bb8ae7ce77eb1a2,
-        type: 2}
-      propertyPath: Score
-      value: 
-      objectReference: {fileID: 114684308893234000, guid: 9fcba018b2a3b7c429b74006fa28ccc0,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0fde48bad65313f45bb8ae7ce77eb1a2, type: 2}
   m_IsPrefabParent: 0

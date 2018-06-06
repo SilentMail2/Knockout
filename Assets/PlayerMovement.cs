@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour {
 	//animation
 	public bool flipX;
 	public SpriteRenderer mySpriteRenderer;
-	
+
 	//scoresystem
 	public ScoreKeeper scoreSystem;
 	public GameObject BackShield;
@@ -66,6 +66,19 @@ public class PlayerMovement : MonoBehaviour {
 	public bool isDucking;
 
 	public LayerMask groundLayer;
+
+	//animations
+	public string jumping;
+	public string jumpPunching;
+	public string jumpSwinging;
+	public string duck;
+	public string punching;
+	public string swinging;
+
+	public Animator animation;
+	public SpriteRenderer SpriteRenderer;
+	
+
 	public bool IsGrounded ()
 	{
 		Vector2 position = transform.position;

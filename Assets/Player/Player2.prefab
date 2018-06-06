@@ -111,7 +111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1628803660424076
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,6 +569,7 @@ MonoBehaviour:
   FrontShield: {fileID: 1118097048195512}
   fShield: 0
   bShield: 0
+  Score: {fileID: 114684308893234000, guid: 9fcba018b2a3b7c429b74006fa28ccc0, type: 2}
   jumpButton: Jump1
   horizontalButton: Horizontal1
   FireButton: Fire1
@@ -589,6 +590,14 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  jumping: 
+  jumpPunching: 
+  jumpSwinging: 
+  duck: 
+  punching: 
+  swinging: 
+  animation: {fileID: 95899744263753230}
+  SpriteRenderer: {fileID: 212448819452987174}
 --- !u!198 &198580937660287158
 ParticleSystem:
   m_ObjectHideFlags: 1

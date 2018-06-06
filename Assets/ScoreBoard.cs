@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class ScoreBoard : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+	void OnEnable()
+	{
+		// get an array of players
+
+		//Loop through and set up a list item for each one
+				//setting the ui element equal to the relavant data
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	void OnDisable()
+	{
+		//Clean up out list of items
 	}
 }
