@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour {
 	public string punching;
 	public string swinging;
 
-	public Animator animation;
+	public Animator animate;
 	public SpriteRenderer SpriteRenderer;
 	
 
@@ -97,13 +97,15 @@ public class PlayerMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Time.timeScale = 0.8f;
-
+		animate = GetComponent<Animator> ();
+		animate.SetInteger ("State", 0);
 		//CameraDirectionX = 
 	}
 	
 
 	// Update is called once per frame
 	void Update () {
+		
 		Score.text = (scoreSystem.points [playerNo].ToString());
 		if ((scoreSystem.playerMode-1) < playerNo) {
 			this.gameObject.SetActive (false);
@@ -111,9 +113,20 @@ public class PlayerMovement : MonoBehaviour {
 		CameraPoint = Camera.main.ScreenToWorldPoint (new Vector3 (Screen.width, CameraPointy, 0));
 		if (Input.GetAxis (horizontalButton) <0) {
 			SelfDir = 1;
+
 		}
 		if (Input.GetAxis (horizontalButton) > 0) {
 			SelfDir = -1;
+
+		}
+		if (Input.GetButton (horizontalButton)) {
+			animate.SetInteger ("State", 1);
+		}
+		if (Input.GetButtonUp (horizontalButton)) {
+			animate.SetInteger ("State", 0);
+		}
+		if (Input.GetAxis (horizontalButton) == 0 && !isPunching) {
+			animate.SetInteger ("State", 0);
 		}
 		if (IsGrounded()) {
 			canjump = true;
@@ -148,6 +161,7 @@ public class PlayerMovement : MonoBehaviour {
 				swing.transform.position = new Vector3 (this.transform.position.x + 0.95f, this.transform.position.y + 0.47f, this.transform.position.z);
 				this.gameObject.GetComponent<BoxCollider2D> ().offset = new Vector2 (-1.37f, 0);
 			}
+			 
 
 			if (Input.GetAxis (horizontalButton) < 0) {
 				flipX = true;
@@ -191,12 +205,17 @@ public class PlayerMovement : MonoBehaviour {
 			}*/
 			if (Input.GetButtonDown(FireButton) && !isPunching){
 				//punch
-				punch.SetActive(true);
-				isPunching = true;
-				Invoke ("EndPunch", 0.5f);
+
+
+			}
+			if (Input.GetButtonDown (FireButton)) {
+				animate.SetBool ("Ispunching", true);
+
 			}
 			if (Input.GetButtonUp (FireButton)) {
 				hasSwing = false;
+				animate.SetBool ("Ispunching", false);
+
 			}
 			if (Input.GetButtonDown (DuckButton)) {
 				isDucking = true;
@@ -243,6 +262,16 @@ public class PlayerMovement : MonoBehaviour {
 	{
 		punch.SetActive (false);
 		isPunching = false;
+		animate.SetBool ("Ispunching", false);
+	}
+	void StartPunch()
+	{
+		if (!isPunching) {
+			punch.SetActive (true);
+			isPunching = true;
+			Invoke ("EndPunch", 0.5f);
+		
+		}
 	}
 
 	void Death ()
