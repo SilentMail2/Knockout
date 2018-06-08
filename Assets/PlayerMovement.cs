@@ -77,7 +77,8 @@ public class PlayerMovement : MonoBehaviour {
 
 	public Animator animate;
 	public SpriteRenderer SpriteRenderer;
-	
+
+	public bool isMoving;
 
 	public bool IsGrounded ()
 	{
@@ -120,17 +121,45 @@ public class PlayerMovement : MonoBehaviour {
 
 		}
 		if (Input.GetButton (horizontalButton)) {
-			animate.SetInteger ("State", 1);
+			isMoving = true;
 		}
 		if (Input.GetButtonUp (horizontalButton)) {
+			isMoving = false;
+		}
+		if (Input.GetButtonDown (FireButton)) {
+			isPunching = true;
+		}
+		if (Input.GetButtonUp (FireButton)) {
+			isPunching = false;
+		}
+
+		if (isMoving && isPunching) {
+			animate.SetInteger ("State", 2);
+
+		}
+		if (!isMoving && isPunching) {
+			animate.SetInteger ("State", 2);
+		}
+		if (!isMoving && !isPunching) {
 			animate.SetInteger ("State", 0);
 		}
-		if (Input.GetAxis (horizontalButton) == 0 && !isPunching) {
-			animate.SetInteger ("State", 0);
+		if (isMoving && !isPunching) {
+				animate.SetInteger ("State", 1);
 		}
+
 		if (IsGrounded()) {
 			canjump = true;
 		}
+
+
+
+
+
+
+
+
+
+
 		if (hp > 0) {
 			Vector2 Movement = new Vector2 (Input.GetAxis (horizontalButton) * moveSpeed, JumpSpeed * jump - gravity);
 			if (Input.GetButtonDown (jumpButton) && canjump) {
