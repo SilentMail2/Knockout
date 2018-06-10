@@ -564,6 +564,11 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  skinType: Regular
+  animate: {fileID: 0}
+  SpriteRenderer: {fileID: 212885571817995580}
+  animationOverride: {fileID: 0}
+  isMoving: 0
 --- !u!198 &198402133517921370
 ParticleSystem:
   m_ObjectHideFlags: 1

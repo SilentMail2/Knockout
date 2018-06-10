@@ -68,15 +68,20 @@ public class PlayerMovement : MonoBehaviour {
 	public LayerMask groundLayer;
 
 	//animations
-	public string jumping;
+	/*public string jumping;
 	public string jumpPunching;
 	public string jumpSwinging;
 	public string duck;
 	public string punching;
-	public string swinging;
+	public string swinging;*/
+	public string skinType;
 
 	public Animator animate;
 	public SpriteRenderer SpriteRenderer;
+	public AnimatorOverrideController animationOverrideRegular;
+	public AnimatorOverrideController animationOverrideKnight;
+
+	
 
 	public bool isMoving;
 
@@ -97,16 +102,28 @@ public class PlayerMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//animationOverride.runtimeAnimatorController = Resources.Load ("Assets/AnimationController/Player1/Player2OverrideRegular") as RuntimeAnimatorController;
 		Time.timeScale = 0.8f;
-		animate = GetComponent<Animator> ();
+		animate = gameObject.GetComponent<Animator> ();
 		animate.SetInteger ("State", 0);
 		//CameraDirectionX = 
+		//animate.runtimeAnimatorController = Resources.Load ("Assets/AnimationController/Player"+ (1+playerNo).ToString()+"/"+skinType+".controller") as RuntimeAnimatorController;
+		//animate.runtimeAnimatorController = Resources.Load ("Assets/AnimationController/Player1/Regular") as RuntimeAnimatorController;
+		if (skinType == "Regular") {
+			animate.runtimeAnimatorController = animationOverrideRegular;
+		}
+		if (skinType == "Knight") {
+			animate.runtimeAnimatorController = animationOverrideKnight;
+		}
 	}
 	
 
 	// Update is called once per frame
 	void Update () {
 		
+
+
+
 		Score.text = (scoreSystem.points [playerNo].ToString());
 		if ((scoreSystem.playerMode-1) < playerNo) {
 			this.gameObject.SetActive (false);

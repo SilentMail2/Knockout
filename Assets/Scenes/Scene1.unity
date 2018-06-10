@@ -402,6 +402,24 @@ Prefab:
       propertyPath: scoreSystem
       value: 
       objectReference: {fileID: 624179021}
+    - target: {fileID: 114582134998740074, guid: 52bab0d7fa0cad940a241e8f97fc66e9,
+        type: 2}
+      propertyPath: animationOverride
+      value: 
+      objectReference: {fileID: 22100000, guid: 940a26559cb96a940ab9510b36b6a2fa,
+        type: 2}
+    - target: {fileID: 114582134998740074, guid: 52bab0d7fa0cad940a241e8f97fc66e9,
+        type: 2}
+      propertyPath: animationOverrideRegular
+      value: 
+      objectReference: {fileID: 22100000, guid: 940a26559cb96a940ab9510b36b6a2fa,
+        type: 2}
+    - target: {fileID: 114582134998740074, guid: 52bab0d7fa0cad940a241e8f97fc66e9,
+        type: 2}
+      propertyPath: animationOverrideKnight
+      value: 
+      objectReference: {fileID: 22100000, guid: 452a77b3ee824234b856a7e53763b55e,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 52bab0d7fa0cad940a241e8f97fc66e9, type: 2}
   m_IsPrefabParent: 0
@@ -994,6 +1012,29 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 114905791427905610, guid: 0fde48bad65313f45bb8ae7ce77eb1a2,
+        type: 2}
+      propertyPath: skinType
+      value: Knight
+      objectReference: {fileID: 0}
+    - target: {fileID: 114905791427905610, guid: 0fde48bad65313f45bb8ae7ce77eb1a2,
+        type: 2}
+      propertyPath: animationOverride
+      value: 
+      objectReference: {fileID: 22100000, guid: 940a26559cb96a940ab9510b36b6a2fa,
+        type: 2}
+    - target: {fileID: 114905791427905610, guid: 0fde48bad65313f45bb8ae7ce77eb1a2,
+        type: 2}
+      propertyPath: animationOverrideRegular
+      value: 
+      objectReference: {fileID: 22100000, guid: 940a26559cb96a940ab9510b36b6a2fa,
+        type: 2}
+    - target: {fileID: 114905791427905610, guid: 0fde48bad65313f45bb8ae7ce77eb1a2,
+        type: 2}
+      propertyPath: animationOverrideKnight
+      value: 
+      objectReference: {fileID: 22100000, guid: 452a77b3ee824234b856a7e53763b55e,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0fde48bad65313f45bb8ae7ce77eb1a2, type: 2}
   m_IsPrefabParent: 0
@@ -1294,6 +1335,24 @@ Prefab:
       propertyPath: scoreSystem
       value: 
       objectReference: {fileID: 624179021}
+    - target: {fileID: 114644887459284110, guid: 14ab80b656de0ec4eb72c15d7a5340a5,
+        type: 2}
+      propertyPath: animationOverride
+      value: 
+      objectReference: {fileID: 22100000, guid: 940a26559cb96a940ab9510b36b6a2fa,
+        type: 2}
+    - target: {fileID: 114644887459284110, guid: 14ab80b656de0ec4eb72c15d7a5340a5,
+        type: 2}
+      propertyPath: animationOverrideRegular
+      value: 
+      objectReference: {fileID: 22100000, guid: 940a26559cb96a940ab9510b36b6a2fa,
+        type: 2}
+    - target: {fileID: 114644887459284110, guid: 14ab80b656de0ec4eb72c15d7a5340a5,
+        type: 2}
+      propertyPath: animationOverrideKnight
+      value: 
+      objectReference: {fileID: 22100000, guid: 452a77b3ee824234b856a7e53763b55e,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 14ab80b656de0ec4eb72c15d7a5340a5, type: 2}
   m_IsPrefabParent: 0
@@ -1341,6 +1400,24 @@ Prefab:
       propertyPath: scoreSystem
       value: 
       objectReference: {fileID: 624179021}
+    - target: {fileID: 114355185755530174, guid: 274cb1cafea146a44a9b211dd58641de,
+        type: 2}
+      propertyPath: animationOverride
+      value: 
+      objectReference: {fileID: 22100000, guid: 940a26559cb96a940ab9510b36b6a2fa,
+        type: 2}
+    - target: {fileID: 114355185755530174, guid: 274cb1cafea146a44a9b211dd58641de,
+        type: 2}
+      propertyPath: animationOverrideRegular
+      value: 
+      objectReference: {fileID: 22100000, guid: 940a26559cb96a940ab9510b36b6a2fa,
+        type: 2}
+    - target: {fileID: 114355185755530174, guid: 274cb1cafea146a44a9b211dd58641de,
+        type: 2}
+      propertyPath: animationOverrideKnight
+      value: 
+      objectReference: {fileID: 22100000, guid: 452a77b3ee824234b856a7e53763b55e,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 274cb1cafea146a44a9b211dd58641de, type: 2}
   m_IsPrefabParent: 0
