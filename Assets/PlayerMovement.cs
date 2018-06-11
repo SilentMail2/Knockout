@@ -82,9 +82,10 @@ public class PlayerMovement : MonoBehaviour {
 	public AnimatorOverrideController animationOverrideKnight;
 
 	
-
 	public bool isMoving;
 
+
+	public bool canMove;
 	public bool IsGrounded ()
 	{
 		Vector2 position = transform.position;
@@ -129,11 +130,11 @@ public class PlayerMovement : MonoBehaviour {
 			this.gameObject.SetActive (false);
 		}
 		CameraPoint = Camera.main.ScreenToWorldPoint (new Vector3 (Screen.width, CameraPointy, 0));
-		if (Input.GetAxis (horizontalButton) <0) {
+		if (Input.GetAxis (horizontalButton) <0 && !isPunching && !isDucking) {
 			SelfDir = 1;
 
 		}
-		if (Input.GetAxis (horizontalButton) > 0) {
+		if (Input.GetAxis (horizontalButton) > 0 && !isPunching && !isDucking) {
 			SelfDir = -1;
 
 		}
@@ -150,18 +151,24 @@ public class PlayerMovement : MonoBehaviour {
 			isPunching = false;
 		}
 
-		if (isMoving && isPunching) {
+		if (isMoving && isPunching && !isDucking) {
 			animate.SetInteger ("State", 2);
 
 		}
-		if (!isMoving && isPunching) {
+		if (!isMoving && isPunching &&!isDucking) {
 			animate.SetInteger ("State", 2);
 		}
-		if (!isMoving && !isPunching) {
+		if (!isMoving && !isPunching && !isDucking) {
 			animate.SetInteger ("State", 0);
 		}
-		if (isMoving && !isPunching) {
+		if (isMoving && !isPunching && !isDucking) {
 				animate.SetInteger ("State", 1);
+		}
+		if (isMoving && !isPunching && isDucking) {
+			animate.SetInteger ("State", 3);
+		}
+		if (!isMoving && !isPunching && isDucking) {
+			animate.SetInteger ("State", 3);
 		}
 
 		if (IsGrounded()) {
@@ -178,11 +185,13 @@ public class PlayerMovement : MonoBehaviour {
 
 
 		if (hp > 0) {
-			Vector2 Movement = new Vector2 (Input.GetAxis (horizontalButton) * moveSpeed, JumpSpeed * jump - gravity);
-			if (Input.GetButtonDown (jumpButton) && canjump) {
-				jump = 1;
-				gravity = 10;
-				canjump = false;
+			
+			if (!isDucking) {
+				if (Input.GetButtonDown (jumpButton) && canjump) {
+					jump = 1;
+					gravity = 10;
+					canjump = false;
+				}
 			}
 			if (/*jumpTimer > 0 &&*/ jump > 0) {
 				//jumpTimer = jumpTimer - jumpCount + Time.deltaTime;
@@ -208,24 +217,24 @@ public class PlayerMovement : MonoBehaviour {
 				this.gameObject.GetComponent<BoxCollider2D> ().offset = new Vector2 (-1.37f, 0);
 			}
 			 
-
-			if (Input.GetAxis (horizontalButton) < 0) {
-				flipX = true;
-				/*Vector3 newScale = obj.transform.localScale;
+			if (!isDucking) {
+				if (Input.GetAxis (horizontalButton) < 0 ) {
+					flipX = true;
+					/*Vector3 newScale = obj.transform.localScale;
 				newScale.x = -1;
 				newScale.y = 1;
 				newScale.z = 1;
 				obj.transform.localScale = obj.transform.localScale.x*newScale;*/
-			}
-			if (Input.GetAxis (horizontalButton) > 0) {
-				flipX = false;
-				/*Vector3 newScale = obj.transform.localScale;
+				}
+				if (Input.GetAxis (horizontalButton) > 0 ) {
+					flipX = false;
+					/*Vector3 newScale = obj.transform.localScale;
 				newScale.x = -1;
 				newScale.y = 1;
 				newScale.z = 1;
 				obj.transform.localScale = new Vector3 (obj.transform.localScale.x*newScale.x, obj.transform.localScale.y, obj.transform.localScale.z);*/
-			}
-			/*
+				}
+				/*
 			if (Input.GetAxis (FireButton) > 0) {
 				if (!hasSwing) {
 					punch.SetActive (true);
@@ -249,12 +258,16 @@ public class PlayerMovement : MonoBehaviour {
 
 				punch.SetActive (false);
 			}*/
-			if (Input.GetButtonDown(FireButton) && !isPunching){
-				//punch
+				if (Input.GetButtonDown (FireButton) && !isPunching) {
+					//punch
 
 
+				}
+				Vector2 Movement = new Vector2 (Input.GetAxis (horizontalButton) * moveSpeed, JumpSpeed * jump - gravity);
+				rb2d.velocity = Movement;
 			}
-			if (Input.GetButtonDown (FireButton)) {
+
+			if (Input.GetButtonDown (FireButton) && !isDucking) {
 				animate.SetBool ("Ispunching", true);
 
 			}
@@ -263,13 +276,13 @@ public class PlayerMovement : MonoBehaviour {
 				animate.SetBool ("Ispunching", false);
 
 			}
-			if (Input.GetButtonDown (DuckButton)) {
-				isDucking = true;
+			if (Input.GetButtonDown (DuckButton) && !isPunching) {
+				StartDuck ();
 			}
-			if (Input.GetButtonUp (DuckButton)) {
+			/*if (Input.GetButtonUp (DuckButton)) {
 				isDucking = false;
-			}
-			rb2d.velocity = Movement;
+			}*/
+
 
 
 
@@ -312,12 +325,23 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	void StartPunch()
 	{
+		
 		if (!isPunching) {
 			punch.SetActive (true);
 			isPunching = true;
 			Invoke ("EndPunch", 0.5f);
 		
 		}
+	}
+
+	void StartDuck ()
+	{
+		
+		isDucking = true;
+	}
+	void EndDuck()
+	{
+		isDucking = false;
 	}
 
 	void Death ()
