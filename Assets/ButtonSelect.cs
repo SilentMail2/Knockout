@@ -34,4 +34,16 @@ public class ButtonSelect : MonoBehaviour {
 	{
 		isSelected = false;
 	}
+	void OnTriggerEnter2D (Collider2D other)
+	{
+		if (other.tag == "Mouse") {
+			isSelected = true;
+		}
+	}
+	void OnTriggerExit2D (Collider2D other)
+	{
+		if (other.tag == "Mouse") {
+			isSelected = false;
+		}
+	}
 }

@@ -121,7 +121,9 @@ public class PlayerMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
+		animate.speed = scoreSystem.TimeVariable;
+
+		if (scoreSystem.TimeVariable == 1){
 
 
 
@@ -264,7 +266,7 @@ public class PlayerMovement : MonoBehaviour {
 
 				}
 				Vector2 Movement = new Vector2 (Input.GetAxis (horizontalButton) * moveSpeed, JumpSpeed * jump - gravity);
-				rb2d.velocity = Movement;
+				rb2d.velocity = Movement*scoreSystem.TimeVariable;
 			}
 
 			if (Input.GetButtonDown (FireButton) && !isDucking) {
@@ -314,7 +316,10 @@ public class PlayerMovement : MonoBehaviour {
 		if (scoreSystem.dead == scoreSystem.playerMode - 1 && alive) {
 			scoreSystem.LogDeath (playerNo);
 			//scoreSystem.points.
+			}
 		}
+
+
 	}
 
 	void EndPunch()

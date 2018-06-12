@@ -14,6 +14,7 @@ public class MatchVariables : MonoBehaviour {
 	public GameObject PauseMenu;
 	public GameObject EveryMenu;
 	public GameObject WinnerMenu;
+	public GameObject LevelMenu;
 	public bool InGame = false;
 	public bool paused = false;
 	public string Scene;
@@ -21,9 +22,13 @@ public class MatchVariables : MonoBehaviour {
 	public string pauseGame;
 	public bool winnerMenu = false;
 	public Scene currentScene;
+	public Scene[] newScene;
+	public int sceneNumber;
 	public int MaxRound;
 	public int Round;
 	public GameObject RoundMenu;
+
+	public float TimeVariable = 1;
 
 	public int Player1Score;
 	public int Player2Score;
@@ -92,8 +97,9 @@ public class MatchVariables : MonoBehaviour {
 		PlayerNos = 2;
 		Debug.Log (PlayerNos + " Players");
 		Playerno.SetActive (false);
-		EveryMenu.SetActive (false);
-		SceneManager.LoadScene (Scene);
+
+		//SceneManager.LoadScene (Scene);
+		LevelMenu.SetActive (true);
 		InGame = true;
 	}
 	public void ThreePlayer ()
@@ -101,8 +107,9 @@ public class MatchVariables : MonoBehaviour {
 		PlayerNos = 3;
 		Debug.Log (PlayerNos + " Players");
 		Playerno.SetActive (false);
-		EveryMenu.SetActive (false);
-		SceneManager.LoadScene (Scene);
+
+		//SceneManager.LoadScene (Scene);
+		LevelMenu.SetActive (true);
 		InGame = true;
 	}
 	public void FourPlayer ()
@@ -110,23 +117,32 @@ public class MatchVariables : MonoBehaviour {
 		PlayerNos = 4;
 		Debug.Log (PlayerNos + " Players");
 		Playerno.SetActive (false);
-		EveryMenu.SetActive (false);
-		SceneManager.LoadScene (Scene);
+
+		LevelMenu.SetActive (true);
+		//SceneManager.LoadScene (Scene);
 		InGame = true;
 
 	}
+
+	public void ChangeLevel ()
+	{
+		SceneManager.LoadScene ("Scene"+sceneNumber.ToString());
+		EveryMenu.SetActive (false);
+		LevelMenu.SetActive (false);
+	}
+
 	public void PauseGame()
 	{
 		if (InGame) {
 			PauseMenu.SetActive (true);
-			Time.timeScale = 0;
+			TimeVariable = 0;
 		}
 	}
 	public void UnPauseGame ()
 	{
 		
 		PauseMenu.SetActive (false);
-		Time.timeScale = 1;
+		TimeVariable = 1;
 		
 	}
 	public void MainMenu ()
@@ -147,6 +163,7 @@ public class MatchVariables : MonoBehaviour {
 		Player2Score = 0;
 		Player3Score = 0;
 		Player4Score = 0;
+		TimeVariable = 1;
 
 	}
 	public void ExitApp ()
@@ -168,7 +185,7 @@ public class MatchVariables : MonoBehaviour {
 			Player3Score = 0;
 			Player4Score = 0;
 		}
-		Time.timeScale = 1;
+		TimeVariable = 1;
 	}
 	public void Winner()
 	{
@@ -186,14 +203,14 @@ public class MatchVariables : MonoBehaviour {
 		}
 		winnerMenu = true;
 		WinnerMenu.SetActive (true);
-		Time.timeScale = 0;
+		TimeVariable = 0;
 
 
 	}
 	public void EndRound()
 	{
 		RoundMenu.SetActive (true);
-		Time.timeScale = 0;
+		TimeVariable = 0;
 	}
 	
 

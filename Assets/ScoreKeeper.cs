@@ -15,7 +15,7 @@ public class ScoreKeeper : MonoBehaviour {
 	public int pointsIncrement = 5;
 	public int firstDeathPoints = 5;
 	public int deathPoints;
-
+	public float TimeVariable;
 
 	public bool roundEnd;
 
@@ -38,7 +38,7 @@ public class ScoreKeeper : MonoBehaviour {
 	void Update ()
 	{
 		//checkplacement
-
+		TimeVariable = Variables.TimeVariable;
 		if (dead >= playerMode && !roundEnd) {
 			EndRound ();
 			roundEnd = true;
