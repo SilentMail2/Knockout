@@ -128,9 +128,14 @@ public class PlayerMovement : MonoBehaviour {
 
 
 		Score.text = (scoreSystem.points [playerNo].ToString());
-		if ((scoreSystem.playerMode-1) < playerNo) {
+		
+			if (!scoreSystem.players [playerNo]) {
+				this.gameObject.SetActive (false);
+			}
+			/*if ((scoreSystem.playerMode-1) < playerNo) {
 			this.gameObject.SetActive (false);
-		}
+		}*/
+			
 		CameraPoint = Camera.main.ScreenToWorldPoint (new Vector3 (Screen.width, CameraPointy, 0));
 		if (Input.GetAxis (horizontalButton) <0 && !isPunching && !isDucking) {
 			SelfDir = 1;

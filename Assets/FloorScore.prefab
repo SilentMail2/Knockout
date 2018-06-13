@@ -78,15 +78,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf84299b224d5d468dd7493ab52d0c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerList: []
+  playerList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   VariableHolder: {fileID: 0}
   Variables: {fileID: 0}
   points: 00000000000000000000000000000000
+  players: 00000000
   dead: 0
   playerMode: 4
   pointsIncrement: 5
   firstDeathPoints: 5
   deathPoints: 0
+  TimeVariable: 0
+  roundEnd: 0
 --- !u!212 &212009553890726100
 SpriteRenderer:
   m_ObjectHideFlags: 1

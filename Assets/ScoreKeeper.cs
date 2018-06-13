@@ -10,6 +10,7 @@ public class ScoreKeeper : MonoBehaviour {
 	public GameObject VariableHolder;
 	public MatchVariables Variables;
 	public int[] points;
+	public bool[] players;
 	public int dead;
 	public int playerMode;
 	public int pointsIncrement = 5;
@@ -37,6 +38,10 @@ public class ScoreKeeper : MonoBehaviour {
 	}
 	void Update ()
 	{
+		players [0] = Variables.players [0];
+		players [1] = Variables.players [1];
+		players [2] = Variables.players [2];
+		players [3] = Variables.players [3];
 		//checkplacement
 		TimeVariable = Variables.TimeVariable;
 		if (dead >= playerMode && !roundEnd) {

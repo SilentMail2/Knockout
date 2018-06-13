@@ -10,11 +10,22 @@ public class MatchVariables : MonoBehaviour {
 	public bool[] matchtypes;
 	public GameObject Playerno;
 	public GameObject PlayerSkins;
+	public GameObject[] PlayerSelect;
 	public GameObject StartMenu;
 	public GameObject PauseMenu;
 	public GameObject EveryMenu;
 	public GameObject WinnerMenu;
 	public GameObject LevelMenu;
+	public GameObject mouse1;
+	public GameObject mouse2;
+	public GameObject mouse3;
+	public GameObject mouse4;
+
+	public bool PlayerSkinsActive;
+	public bool[] players;
+
+	public GameObject[] playerScreen;
+
 	public bool InGame = false;
 	public bool paused = false;
 	public string Scene;
@@ -57,13 +68,43 @@ public class MatchVariables : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (!InGame || paused) {
+			if (PlayerNos == 2) {
+				mouse1.SetActive (true);
+				mouse2.SetActive (true);
+				mouse3.SetActive (false);
+				mouse4.SetActive (false);
+			}
+			if (PlayerNos == 3) {
+				mouse1.SetActive (true);
+				mouse2.SetActive (true);
+				mouse3.SetActive (true);
+				mouse4.SetActive (false);
+			}
+			if (PlayerNos == 4) {
+				mouse1.SetActive (true);
+				mouse2.SetActive (true);
+				mouse3.SetActive (true);
+				mouse4.SetActive (true);
+			}
+		}
+		if (InGame && !paused) {
+			mouse1.SetActive (false);
+			mouse2.SetActive (false);
+			mouse3.SetActive (false);
+			mouse4.SetActive (false);
+		}
+			
 		if (Input.GetButtonDown (pauseGame)) {
+			Debug.Log ("Escaped Pressed");
 			if (!paused) {
 				PauseGame ();
+				Debug.Log ("GamePaused");
 			}
-			if (paused) {
+			/*if (paused) {
 				UnPauseGame ();
-			}
+				Debug.Log ("GameUnPaused");
+			}*/
 		}
 		if (winnerMenu) {
 			WinnerMenu.SetActive (true);
@@ -75,13 +116,26 @@ public class MatchVariables : MonoBehaviour {
 		Player2ScTx.text = Player2Score.ToString();
 		Player3ScTx.text = Player3Score.ToString();
 		Player4ScTx.text = Player4Score.ToString();
+
+		if (Input.GetButtonDown ("Jump1") || Input.GetButtonDown ("Jump2") || Input.GetButtonDown ("Jump3") || Input.GetButtonDown ("Jump4")) {
+			if (PlayerSkinsActive == true) {
+				AddPlayer ();
+			}
+		}
+		if (Input.GetButtonDown ("Fire1") || Input.GetButtonDown ("Fire2") || Input.GetButtonDown ("Fire3") || Input.GetButtonDown ("Fire4")) {
+			if (PlayerSkinsActive == true) {
+				TakePlayer ();
+			}
+		}
+
 	}
 	public void QuickPlay ()
 	{
 		matchtypes [0] = true;
 		matchtypes [1] = false;
 		StartMenu.SetActive (false);
-		Playerno.SetActive (true);
+		PlayerSkinsActive = true;
+		PlayerSkins.SetActive (true);
 		MaxRound = 0;
 	}
 	public void Tournament()
@@ -89,9 +143,76 @@ public class MatchVariables : MonoBehaviour {
 		StartMenu.SetActive (false);
 		matchtypes [1] = true;
 		matchtypes [0] = false;
-		Playerno.SetActive (true);
+		PlayerSkinsActive = true;
+		PlayerSkins.SetActive (true);
 		MaxRound = 3;
 	}
+
+
+	public void AddPlayer ()
+	{
+
+		if (Input.GetButtonDown ("Jump1") && !players [0]) 
+		{
+			PlayerNos++;
+			players [0] = true;
+			PlayerSelect [0].SetActive (true);
+		}
+		if (Input.GetButtonDown ("Jump2") && !players [1]) 
+		{
+			PlayerNos++;
+			players [1] = true;
+			PlayerSelect [1].SetActive (true);
+		}
+		if (Input.GetButtonDown ("Jump3") && !players [2]) 
+		{
+			PlayerNos++;
+			players [2] = true;
+			PlayerSelect [2].SetActive (true);
+		}
+		if (Input.GetButtonDown ("Jump4") && !players [3]) 
+		{
+			PlayerNos++;
+			players [3] = true;
+			PlayerSelect [3].SetActive (true);
+		}
+	}
+	public void TakePlayer ()
+	{
+		if (Input.GetButtonDown ("Fire1") && !players [0]) 
+		{
+			PlayerNos--;
+			players [0] = false;
+			PlayerSelect [0].SetActive (false);
+		}
+		if (Input.GetButtonDown ("Fire2") && players [1]) 
+		{
+			PlayerNos--;
+			players [1] = false;
+			PlayerSelect [0].SetActive (false);
+		}
+		if (Input.GetButtonDown ("Fire3") && players [2]) 
+		{
+			PlayerNos--;
+			players [2] = false;
+			PlayerSelect [1].SetActive (false);
+		}
+		if (Input.GetButtonDown ("Fire4") && players [3]) 
+		{
+			PlayerNos--;
+			players [3] = false;
+			PlayerSelect [3].SetActive (false);
+		}
+	}
+	public void FinishScreen ()
+	{
+		if (PlayerNos >= 2) {
+			PlayerSkins.SetActive (false);
+			LevelMenu.SetActive (true);
+			PlayerSkinsActive = false;
+		}
+	}
+
 	public void TwoPlayer ()
 	{
 		PlayerNos = 2;
@@ -129,6 +250,8 @@ public class MatchVariables : MonoBehaviour {
 		SceneManager.LoadScene ("Scene"+sceneNumber.ToString());
 		EveryMenu.SetActive (false);
 		LevelMenu.SetActive (false);
+		InGame = true;
+		paused = false;
 	}
 
 	public void PauseGame()
@@ -136,6 +259,7 @@ public class MatchVariables : MonoBehaviour {
 		if (InGame) {
 			PauseMenu.SetActive (true);
 			TimeVariable = 0;
+			paused = true;
 		}
 	}
 	public void UnPauseGame ()
@@ -143,6 +267,7 @@ public class MatchVariables : MonoBehaviour {
 		
 		PauseMenu.SetActive (false);
 		TimeVariable = 1;
+		paused = false;
 		
 	}
 	public void MainMenu ()
