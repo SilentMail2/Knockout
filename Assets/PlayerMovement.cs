@@ -25,10 +25,15 @@ public class PlayerMovement : MonoBehaviour {
 	public GameObject Weapon;
 	public bool canjump;
 	public float jump;
+	public GameObject Collision;
 
 	//animation
 	public bool flipX;
 	public SpriteRenderer mySpriteRenderer;
+
+	//Explosion
+	public GameObject Explosion;
+
 
 	//scoresystem
 	public ScoreKeeper scoreSystem;
@@ -52,7 +57,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	public float SelfDir;
 
-	//public GameObject Trigger;
+	public GameObject Trigger;
 	public GameObject ScreenExplosion;
 
 	public float CameraPointy;
@@ -83,6 +88,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	
 	public bool isMoving;
+
 
 
 	public bool canMove;
@@ -217,11 +223,16 @@ public class PlayerMovement : MonoBehaviour {
 				punch.transform.position = new Vector3 (this.transform.position.x-0.42f, this.transform.position.y+0.47f, this.transform.position.z);
 				swing.transform.position = new Vector3 (this.transform.position.x - 0.95f, this.transform.position.y + 0.47f, this.transform.position.z);
 				this.gameObject.GetComponent<BoxCollider2D> ().offset = new Vector2 (1.37f, 0);
+					Collision.transform.position = new Vector3 (1.6f, 0.0f, 0.0f);
+				//	Trigger.transform.position = new Vector3 (1.6f, 0.0f, 0.0f);
+
 			} else if (!flipX){
 				mySpriteRenderer.flipX = false;
 				punch.transform.position = new Vector3 (this.transform.position.x + 0.42f, this.transform.position.y+0.47f, this.transform.position.z);
 				swing.transform.position = new Vector3 (this.transform.position.x + 0.95f, this.transform.position.y + 0.47f, this.transform.position.z);
 				this.gameObject.GetComponent<BoxCollider2D> ().offset = new Vector2 (-1.37f, 0);
+				Collision.transform.position = new Vector3 (-1.6f, 0.0f, 0.0f);	
+				//Trigger.transform.position = new Vector3 (-1.6f, 0.0f, 0.0f);
 			}
 			 
 			if (!isDucking) {
@@ -361,6 +372,8 @@ public class PlayerMovement : MonoBehaviour {
 			alive = false;
 			scoreSystem.LogDeath (playerNo);
 			this.gameObject.GetComponent<BoxCollider2D> ().enabled = false;
+			Explosion.SetActive (true);
+			Collision.SetActive (false);
 			/*scoreSystem.dead += 1;
 			if (scoreSystem.dead == 1) {
 				scoreSystem.points [playerNo] += 5;
