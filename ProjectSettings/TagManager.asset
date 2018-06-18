@@ -21,6 +21,11 @@ TagManager:
   - Setting
   - Continue
   - Scene
+  - SkinName1
+  - SkinName2
+  - SkinName3
+  - SkinName4
+  - FinishScene
   layers:
   - Default
   - TransparentFX

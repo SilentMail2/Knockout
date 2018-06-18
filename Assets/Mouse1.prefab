@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114022591465588374}
   - component: {fileID: 61489509784897614}
   - component: {fileID: 114428825008050020}
-  - component: {fileID: 50983789003218748}
+  - component: {fileID: 50925343270662984}
   m_Layer: 5
   m_Name: Mouse1
   m_TagString: Mouse
@@ -31,7 +31,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!50 &50983789003218748
+--- !u!50 &50925343270662984
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -50,7 +50,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61489509784897614
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.006896496, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -114,18 +114,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2faf4734ff2e6346a1f716a12e94455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  verticalControl: Vertical1
-  horizontalControl: Horizontal1
+  verticalControl: Vertical2
+  horizontalControl: Horizontal2
   clickButton: MousePress1
   horizontalMovement: 0
   verticalMovement: 0
-  speed: 100000
-  rb2d: {fileID: 50983789003218748}
-  movement: {x: 0, y: 0}
+  speed: 2000
+  rb2d: {fileID: 0}
+  movement: {x: 0, y: 0, z: 0}
   buttonController: {fileID: 0}
-  buttonSelected: 0
+  buttonSelected: 1
   button: {fileID: 0}
-  selectedTag: 
+  selectedTag: FinishScene
+  minXposition: 0
+  selectedSkin: FinishScreen
+  maxXposition: 0
+  maxYposition: 0
+  minYposition: 0
+  pos: {x: 0, y: 0, z: 0}
+  sceneStore: {fileID: 0}
+  myRecTransform: {fileID: 224900759974188750}
+  guiSizehalf: {x: 960, y: 540}
+  screenSize: {x: 1920, y: 1080}
+  targetRes: {x: 1920, y: 1080}
+  screenReciprocal: {x: 0.00052083336, y: 0.0009259259}
 --- !u!222 &222048551263840016
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -140,13 +152,13 @@ RectTransform:
   m_GameObject: {fileID: 1070005463984722}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 204}
-  m_LocalScale: {x: 0.048052114, y: 0.076369874, z: 0.04797243}
+  m_LocalScale: {x: 0.048049998, y: 0.07637, z: 0.047969997}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -53.34503, y: -20.302368}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -53.34497, y: 449.65112}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}

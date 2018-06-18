@@ -21,6 +21,12 @@ public class MatchVariables : MonoBehaviour {
 	public GameObject mouse3;
 	public GameObject mouse4;
 
+
+	public string player1Skin;
+	public string player2Skin;
+	public string player3Skin;
+	public string player4Skin;
+
 	public bool PlayerSkinsActive;
 	public bool[] players;
 
@@ -94,6 +100,12 @@ public class MatchVariables : MonoBehaviour {
 			mouse3.SetActive (false);
 			mouse4.SetActive (false);
 		}
+		if (PlayerNos == 0) {
+			mouse1.SetActive (true);
+			mouse2.SetActive (false);
+			mouse3.SetActive (false);
+			mouse4.SetActive (false);
+		}
 			
 		if (Input.GetButtonDown (pauseGame)) {
 			Debug.Log ("Escaped Pressed");
@@ -117,7 +129,7 @@ public class MatchVariables : MonoBehaviour {
 		Player3ScTx.text = Player3Score.ToString();
 		Player4ScTx.text = Player4Score.ToString();
 
-		if (Input.GetButtonDown ("Jump1") || Input.GetButtonDown ("Jump2") || Input.GetButtonDown ("Jump3") || Input.GetButtonDown ("Jump4")) {
+		if (Input.GetButtonDown ("MousePress1") || Input.GetButtonDown ("MousePress2") || Input.GetButtonDown ("MousePress3") || Input.GetButtonDown ("MousePress4")) {
 			if (PlayerSkinsActive == true) {
 				AddPlayer ();
 			}
@@ -152,26 +164,30 @@ public class MatchVariables : MonoBehaviour {
 	public void AddPlayer ()
 	{
 
-		if (Input.GetButtonDown ("Jump1") && !players [0]) 
+		if (Input.GetButtonDown ("MousePress1") && !players [0]) 
 		{
+			//player1 down
 			PlayerNos++;
 			players [0] = true;
 			PlayerSelect [0].SetActive (true);
 		}
-		if (Input.GetButtonDown ("Jump2") && !players [1]) 
+		if (Input.GetButtonDown ("MousePress2") && !players [1]) 
 		{
+			//player2 down
 			PlayerNos++;
 			players [1] = true;
 			PlayerSelect [1].SetActive (true);
 		}
-		if (Input.GetButtonDown ("Jump3") && !players [2]) 
+		if (Input.GetButtonDown ("MousePress3") && !players [2]) 
 		{
+			//player3 down
 			PlayerNos++;
 			players [2] = true;
 			PlayerSelect [2].SetActive (true);
 		}
-		if (Input.GetButtonDown ("Jump4") && !players [3]) 
+		if (Input.GetButtonDown ("MousePress4") && !players [3]) 
 		{
+			//player4 down
 			PlayerNos++;
 			players [3] = true;
 			PlayerSelect [3].SetActive (true);
@@ -179,7 +195,7 @@ public class MatchVariables : MonoBehaviour {
 	}
 	public void TakePlayer ()
 	{
-		if (Input.GetButtonDown ("Fire1") && !players [0]) 
+		if (Input.GetButtonDown ("Fire1") && players [0]) 
 		{
 			PlayerNos--;
 			players [0] = false;
@@ -289,6 +305,15 @@ public class MatchVariables : MonoBehaviour {
 		Player3Score = 0;
 		Player4Score = 0;
 		TimeVariable = 1;
+		PlayerNos = 0;
+		players [0] = false;
+		players [1] = false;
+		players [2] = false;
+		players [3] = false;
+		PlayerSelect [0].SetActive (false);
+		PlayerSelect [1].SetActive (false);
+		PlayerSelect [2].SetActive (false);
+		PlayerSelect [3].SetActive (false);
 
 	}
 	public void ExitApp ()
@@ -332,6 +357,27 @@ public class MatchVariables : MonoBehaviour {
 
 
 	}
+
+	public void ChangeSkinPlayer1(string newname)
+	{
+		player1Skin = newname;
+	}
+	public void ChangeSkinPlayer2(string newname, Collider2D other)
+	{
+		
+	}
+	public void ChangeSkinPlayer3(string newname, Collider2D other)
+	{
+		player3Skin = other.gameObject.name;
+		newname = player3Skin;
+	}
+	public void ChangeSkinPlayer4(string newname, Collider2D other)
+	{
+		player4Skin = other.gameObject.name;
+		newname = player4Skin;
+	}
+
+
 	public void EndRound()
 	{
 		RoundMenu.SetActive (true);
