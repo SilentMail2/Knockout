@@ -123,11 +123,14 @@ public class MouseController : MonoBehaviour {
 			if (selectedTag == "FinishScene") {
 				buttonController.FinishScreen ();
 			}
+			if (selectedTag == "NextRound") {
+				buttonController.Rematch ();
+			}
 		}
 	}
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		if (other.tag == "Tourtament" || other.tag == "Quickplay" || other.tag == "Exit" || other.tag == "2" || other.tag == "3" || other.tag == "4"|| other.tag == "MainMenu"|| other.tag == "Setting"|| other.tag == "Continue"||other.tag == "Scene"||other.tag == "SkinName1"||other.tag == "SkinName2"||other.tag == "SkinName3"||other.tag == "SkinName4"||other.tag == "FinishScene") {
+		if (other.tag == "Tourtament" || other.tag == "Quickplay" || other.tag == "Exit" || other.tag == "2" || other.tag == "3" || other.tag == "4"|| other.tag == "MainMenu"|| other.tag == "Setting"|| other.tag == "Continue"||other.tag == "Scene"||other.tag == "SkinName1"||other.tag == "SkinName2"||other.tag == "SkinName3"||other.tag == "SkinName4"||other.tag == "FinishScene"|| other.tag == "NextRound") {
 			buttonSelected = true;
 			selectedSkin = other.gameObject.name;
 		}
@@ -139,7 +142,7 @@ public class MouseController : MonoBehaviour {
 	}
 	void OnTriggerExit2D (Collider2D other)
 	{
-		if (other.tag == "Tourtament" || other.tag == "Quickplay" || other.tag == "Exit" || other.tag == "2" || other.tag == "3" || other.tag == "4"|| other.tag == "MainMenu"|| other.tag == "Setting"|| other.tag == "Continue"||other.tag == "Scene")
+		if (other.tag == "Tourtament" || other.tag == "Quickplay" || other.tag == "Exit" || other.tag == "2" || other.tag == "3" || other.tag == "4"|| other.tag == "MainMenu"|| other.tag == "Setting"|| other.tag == "Continue"||other.tag == "Scene"||other.tag == "SkinName1"||other.tag == "SkinName2"||other.tag == "SkinName3"||other.tag == "SkinName4"||other.tag == "FinishScene"|| other.tag == "NextRound")
 		{
 			buttonSelected = false;
 		}

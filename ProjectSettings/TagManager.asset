@@ -26,6 +26,7 @@ TagManager:
   - SkinName3
   - SkinName4
   - FinishScene
+  - NextRound
   layers:
   - Default
   - TransparentFX
