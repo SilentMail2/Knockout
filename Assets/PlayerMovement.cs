@@ -151,10 +151,10 @@ public class PlayerMovement : MonoBehaviour {
 			SelfDir = -1;
 
 		}
-		if (Input.GetButton (horizontalButton)) {
+			if (Input.GetAxis (horizontalButton)>0||Input.GetAxis (horizontalButton)<0) {
 			isMoving = true;
 		}
-		if (Input.GetButtonUp (horizontalButton)) {
+			if (Input.GetAxis (horizontalButton)==0) {
 			isMoving = false;
 		}
 		if (Input.GetButtonDown (FireButton)) {

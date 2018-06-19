@@ -1,9 +1,33 @@
 fileFormatVersion: 2
-guid: c528990db5e092c46a3308216637e470
-timeCreated: 1527844699
-licenseType: Free
+guid: 0dee9b7e059361845a18f5d337ce1b05
+timeCreated: 1529370107
+licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: IdlePlayer1_0
+    21300002: IdlePlayer1_1
+    21300004: IdlePlayer1_2
+    21300006: IdlePlayer1_3
+    21300008: IdlePlayer1_4
+    21300010: IdlePlayer1_5
+    21300012: IdlePlayer1_6
+    21300014: IdlePlayer1_7
+    21300016: IdlePlayer1_8
+    21300018: IdlePlayer1_9
+    21300020: IdlePlayer1_10
+    21300022: IdlePlayer1_11
+    21300024: IdlePlayer1_12
+    21300026: IdlePlayer1_13
+    21300028: IdlePlayer1_14
+    21300030: IdlePlayer1_15
+    21300032: IdlePlayer1_16
+    21300034: IdlePlayer1_17
+    21300036: IdlePlayer1_18
+    21300038: IdlePlayer1_19
+    21300040: IdlePlayer1_20
+    21300042: IdlePlayer1_21
+    21300044: IdlePlayer1_22
+    21300046: IdlePlayer1_23
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -86,27 +110,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - buildTarget: tvOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   - buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -128,7 +132,343 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: IdlePlayer1_0
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 6036
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IdlePlayer1_1
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 6036
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IdlePlayer1_2
+      rect:
+        serializedVersion: 2
+        x: 1983
+        y: 6036
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IdlePlayer1_3
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 4549
+        width: 817
+        height: 1445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IdlePlayer1_4
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 4549
+        width: 799
+        height: 1445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IdlePlayer1_5
+      rect:
+        serializedVersion: 2
+        x: 1891
+        y: 4549
+        width: 784
+        height: 1445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IdlePlayer1_6
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 4526
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IdlePlayer1_7
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 4526
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IdlePlayer1_8
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 4526
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IdlePlayer1_9
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 3039
+        width: 772
+        height: 1445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IdlePlayer1_10
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 3039
+        width: 784
+        height: 1445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IdlePlayer1_11
+      rect:
+        serializedVersion: 2
+        x: 1894
+        y: 3039
+        width: 793
+        height: 1445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IdlePlayer1_12
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 3016
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IdlePlayer1_13
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 3016
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IdlePlayer1_14
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 3016
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IdlePlayer1_15
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 1529
+        width: 807
+        height: 1445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IdlePlayer1_16
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 1529
+        width: 798
+        height: 1445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IdlePlayer1_17
+      rect:
+        serializedVersion: 2
+        x: 1891
+        y: 1529
+        width: 787
+        height: 1445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IdlePlayer1_18
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 1506
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IdlePlayer1_19
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 1506
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IdlePlayer1_20
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 1506
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IdlePlayer1_21
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 19
+        width: 778
+        height: 1445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IdlePlayer1_22
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 19
+        width: 793
+        height: 1445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: IdlePlayer1_23
+      rect:
+        serializedVersion: 2
+        x: 1882
+        y: 19
+        width: 814
+        height: 1445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 
